@@ -1,0 +1,86 @@
+/* ==========================================================================
+   MATCHVISION — Design tokens
+   ========================================================================== */
+
+:root {
+  /* Brand colors */
+  --color-navy: #16345f;
+  --color-navy-hover: #234c82;
+  --color-navy-10: rgba(22, 52, 95, 0.1);
+  --color-navy-06: rgba(22, 52, 95, 0.06);
+  --color-navy-25: rgba(22, 52, 95, 0.25);
+  --color-navy-35: rgba(22, 52, 95, 0.35);
+
+  /* Neutrals */
+  --color-ink: #141414;
+  --color-cream: #f7f6f2;
+  --color-white: #ffffff;
+  --color-form-bg: #eaedf1;
+
+  /* Ink alpha scale (text on light) */
+  --ink-75: rgba(20, 20, 20, 0.75);
+  --ink-70: rgba(20, 20, 20, 0.7);
+  --ink-62: rgba(20, 20, 20, 0.62);
+  --ink-60: rgba(20, 20, 20, 0.6);
+  --ink-55: rgba(20, 20, 20, 0.55);
+  --ink-50: rgba(20, 20, 20, 0.5);
+  --ink-45: rgba(20, 20, 20, 0.45);
+  --ink-40: rgba(20, 20, 20, 0.4);
+  --ink-35: rgba(20, 20, 20, 0.35);
+
+  /* Cream alpha scale (text on navy) */
+  --cream-85: rgba(247, 246, 242, 0.85);
+  --cream-80: rgba(247, 246, 242, 0.8);
+  --cream-65: rgba(247, 246, 242, 0.65);
+  --cream-60: rgba(247, 246, 242, 0.6);
+  --cream-55: rgba(247, 246, 242, 0.55);
+  --cream-45: rgba(247, 246, 242, 0.45);
+  --cream-40: rgba(247, 246, 242, 0.4);
+  --cream-12: rgba(247, 246, 242, 0.12);
+
+  /* Hairlines / borders */
+  --line-08: rgba(20, 20, 20, 0.08);
+  --line-10: rgba(20, 20, 20, 0.1);
+  --line-12: rgba(20, 20, 20, 0.12);
+  --line-14: rgba(20, 20, 20, 0.14);
+  --line-18: rgba(20, 20, 20, 0.18);
+  --line-20: rgba(20, 20, 20, 0.2);
+
+  /* Accents */
+  --color-amber: #f59e0b;
+  --color-purple: #7f2af0;
+  --color-error: #c0392b;
+
+  /* Typography */
+  --font-sans: "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Radii */
+  --radius-pill: 99px;
+  --radius-card: 16px;
+  --radius-image: 22px;
+  --radius-tile: 13px;
+  --radius-input: 10px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 16px rgba(20, 20, 20, 0.05);
+  --shadow-card-hover: 0 14px 34px rgba(20, 20, 20, 0.1);
+  --shadow-form: 0 4px 24px rgba(20, 20, 20, 0.06);
+  --shadow-badge: 0 8px 22px rgba(22, 52, 95, 0.32);
+  --shadow-tooltip: 0 8px 24px rgba(20, 20, 20, 0.2);
+  --shadow-float: 0 8px 30px rgba(20, 20, 20, 0.12);
+
+  /* Layout */
+  --container-max: 1180px;
+  --gutter: 48px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.18s;
+  --dur-med: 0.25s;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 22px;
+  }
+}

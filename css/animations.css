@@ -1,0 +1,98 @@
+/* ==========================================================================
+   MATCHVISION — Animations
+   GPU-friendly (transform / opacity only), gated by prefers-reduced-motion
+   ========================================================================== */
+
+/* Scroll-reveal (activated by js/animations.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  will-change: auto;
+}
+
+/* Stagger helpers for grouped items */
+.reveal.is-visible[data-reveal-delay="1"] {
+  transition-delay: 0.08s;
+}
+
+.reveal.is-visible[data-reveal-delay="2"] {
+  transition-delay: 0.16s;
+}
+
+.reveal.is-visible[data-reveal-delay="3"] {
+  transition-delay: 0.24s;
+}
+
+/* Lazy image fade-in (activated by js/lazyload.js) */
+.lazy-img {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.lazy-img.is-loaded {
+  opacity: 1;
+}
+
+/* Hero entrance */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero > * {
+  animation: hero-rise 0.7s var(--ease-out) backwards;
+}
+
+.hero > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.hero > *:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.hero > *:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+/* Reduced motion: show everything instantly, keep hovers subtle */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .lazy-img {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* If JS never runs, never hide content */
+.no-js .reveal,
+.no-js .lazy-img {
+  opacity: 1;
+  transform: none;
+}
