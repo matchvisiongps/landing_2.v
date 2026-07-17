@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+  <rect width="360" height="360" rx="64" fill="#16345F"/>
+  <g transform="translate(-420,-220)">
+    <path d="M470 300 L540 260 L540 540 L470 500 Z" fill="#f7f6f2"/>
+    <path d="M730 300 L660 260 L660 540 L730 500 Z" fill="#f7f6f2"/>
+    <path d="M600 330 L660 296 L660 420 L600 386 Z" fill="#9db4d6"/>
+    <path d="M600 470 L540 436 L540 560 L600 526 Z" fill="#9db4d6"/>
+  </g>
+</svg>
