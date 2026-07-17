@@ -1,0 +1,122 @@
+<!--
+  MATCHVISION component partial: faq
+  Source of truth: index.html (section between the matching
+  'component:faq' markers). Kept as a reusable reference for future
+  templating/SSG integration - update index.html first, then re-sync.
+-->
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <h2 class="faq__title" id="faq-title">Questions, answered.</h2>
+  <p class="faq__sub">Can't find what you're looking for? Ask us directly and Thomas or Daniel will get back to you.</p>
+
+  <div class="faq__grid">
+    <div id="faq-list">
+      <div class="faq-item is-open">
+        <h3>
+          <button type="button" class="faq-item__q" aria-expanded="true">
+            What do I need to send for a performance review?
+            <span class="faq-item__icon" aria-hidden="true">−</span>
+          </button>
+        </h3>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            <p class="faq-item__a-text">A full match video (a shareable link from YouTube, Veo, Google Drive or similar). If you have GPS data from the match, add the export — the review gets even more precise.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3>
+          <button type="button" class="faq-item__q" aria-expanded="false">
+            Do I need a GPS tracker to use the Blueprint drills?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            <p class="faq-item__a-text">No. All 28 conditioning drills are designed to work with or without a GPS tracker. With a tracker you unlock the data-tracking layer of each drill.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3>
+          <button type="button" class="faq-item__q" aria-expanded="false">
+            Who is the Blueprint for?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            <p class="faq-item__a-text">Coaches, analysts and fitness trainers who want to understand and use GPS data in football — 8 key topics, built on 3 seasons of hands-on data work in Czech divisions 1–4.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3>
+          <button type="button" class="faq-item__q" aria-expanded="false">
+            How long does the review take?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            <p class="faq-item__a-text">You will receive your complete report by email within a few days of submitting your match. Exact timing is confirmed after you submit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3>
+          <button type="button" class="faq-item__q" aria-expanded="false">
+            Is the review suitable for youth players?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            <p class="faq-item__a-text">Yes — the review works for any player with match footage, and reports include advice appropriate to your level, from youth to semi-pro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="ask-card">
+      <form id="ask-form" novalidate>
+        <div class="ask-card__head">
+          <span class="ask-card__icon">
+            <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-chat"/></svg>
+          </span>
+          <h3 class="ask-card__title">Ask a question</h3>
+        </div>
+        <p class="ask-card__sub">Usually answered within 1 working day.</p>
+        <div class="ask-card__form">
+          <div class="field">
+            <label for="ask_name">Name</label>
+            <input id="ask_name" name="ask_name" type="text" autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="ask_email">Email</label>
+            <input id="ask_email" name="ask_email" type="email" autocomplete="email" placeholder="you@email.com">
+          </div>
+          <div class="field">
+            <label for="ask_question">Your question</label>
+            <textarea id="ask_question" name="ask_question" rows="4" placeholder="What would you like to know?"></textarea>
+          </div>
+          <p class="ask-card__error" id="ask-error" aria-live="polite"></p>
+          <button type="submit" class="btn btn--primary btn--md">Send question</button>
+        </div>
+      </form>
+
+      <div class="ask-card__success" id="ask-success" hidden tabindex="-1">
+        <span class="ask-card__success-icon">
+          <svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-check"/></svg>
+        </span>
+        <p class="ask-card__success-title">Thanks — question sent!</p>
+        <p class="ask-card__success-text">We'll reply to your email shortly.</p>
+        <button type="button" class="link-reset" id="ask-reset">Ask another</button>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,258 @@
+<!--
+  MATCHVISION component partial: order-form
+  Source of truth: index.html (section between the matching
+  'component:order-form' markers). Kept as a reusable reference for future
+  templating/SSG integration - update index.html first, then re-sync.
+-->
+
+<section class="order" id="submit" aria-labelledby="order-title">
+  <div class="order__inner">
+    <div class="order__header">
+      <p class="order__eyebrow">Complete Football Performance Review · €129</p>
+      <h2 class="order__title" id="order-title">Submit your data</h2>
+      <p class="order__sub">Fill in three short sections. Your personalised report is ready within 5 working days.</p>
+    </div>
+
+    <div id="order-wizard">
+      <ol class="stepper" aria-label="Form progress">
+        <li class="stepper__step is-current" data-step-indicator="1">
+          <span class="stepper__num">01</span>
+          <span class="stepper__label">Your Details</span>
+        </li>
+        <li class="stepper__bar" role="presentation" aria-hidden="true"></li>
+        <li class="stepper__step" data-step-indicator="2">
+          <span class="stepper__num">02</span>
+          <span class="stepper__label">Match Context</span>
+        </li>
+        <li class="stepper__bar" role="presentation" aria-hidden="true"></li>
+        <li class="stepper__step" data-step-indicator="3">
+          <span class="stepper__num">03</span>
+          <span class="stepper__label">Video &amp; GPS</span>
+        </li>
+      </ol>
+
+      <form class="form-card" id="order-form" novalidate>
+        <p class="form-card__saved" id="order-saved" aria-hidden="true">Saved</p>
+
+        <!-- Step 1: Your details -->
+        <fieldset class="form-step" data-step="1">
+          <legend class="visually-hidden">Step 1 of 3 — Your details</legend>
+          <div>
+            <p class="form-step__eyebrow">Your details</p>
+            <p class="form-step__title">Player &amp; payment info</p>
+          </div>
+          <p class="callout"><strong>What happens next:</strong> once you submit, we review your video and GPS data and deliver your report + training programme within <strong>5 working days</strong>.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="first_name">First name</label>
+              <input id="first_name" name="first_name" type="text" autocomplete="given-name" placeholder="e.g. Daniel">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="last_name">Last name</label>
+              <input id="last_name" name="last_name" type="text" autocomplete="family-name" placeholder="e.g. Johnson">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="jersey_number">Jersey number <span class="field__hint">— to spot you on video</span></label>
+              <input id="jersey_number" name="jersey_number" type="number" inputmode="numeric" min="1" max="99" placeholder="e.g. 10">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="team_name">Team name <span class="field__hint">— optional</span></label>
+              <input id="team_name" name="team_name" type="text" autocomplete="organization" placeholder="e.g. FC London">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email used during payment <span class="field__hint">— must match your checkout email</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="position">Position</label>
+              <select id="position" name="position">
+                <option value="">Select your position</option>
+                <option>Goalkeeper</option>
+                <option>Centre-Back</option>
+                <option>Full-Back / Wing-Back</option>
+                <option>Defensive Midfielder</option>
+                <option>Central Midfielder</option>
+                <option>Wide Midfielder / Winger</option>
+                <option>Attacking Midfielder</option>
+                <option>Striker / Forward</option>
+              </select>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="level">Current level / League</label>
+              <select id="level" name="level">
+                <option value="">Select your level</option>
+                <option>Professional (1st Division)</option>
+                <option>Professional (2nd Division)</option>
+                <option>Semi-Professional (3rd / 4th Division)</option>
+                <option>Amateur — Competitive</option>
+                <option>Amateur — Recreational</option>
+                <option>Youth / Academy</option>
+                <option>University / College</option>
+              </select>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field field--narrow">
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" inputmode="numeric" min="13" max="60" placeholder="e.g. 23">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+        </fieldset>
+
+        <!-- Step 2: Match context -->
+        <fieldset class="form-step" data-step="2" hidden>
+          <legend class="visually-hidden">Step 2 of 3 — Match context</legend>
+          <div>
+            <p class="form-step__eyebrow">Match context</p>
+            <p class="form-step__title">The match we're reviewing</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="minutes_played">Minutes played</label>
+              <input id="minutes_played" name="minutes_played" type="number" inputmode="numeric" min="1" max="130" placeholder="e.g. 90, 67, 45">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="match_result">Match result</label>
+              <select id="match_result" name="match_result">
+                <option value="">Select result</option>
+                <option>Win</option>
+                <option>Draw</option>
+                <option>Loss</option>
+              </select>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field__label" id="platform-label">GPS platform / device <span class="field__hint">— optional, tap one or type your own</span></span>
+            <div class="chips" id="platform-chips" role="group" aria-labelledby="platform-label">
+              <button type="button" class="chip" data-platform="STATSports">STATSports</button>
+              <button type="button" class="chip" data-platform="Catapult">Catapult</button>
+              <button type="button" class="chip" data-platform="Polar">Polar</button>
+              <button type="button" class="chip" data-platform="Garmin">Garmin</button>
+              <button type="button" class="chip" data-platform="Wimu">Wimu</button>
+              <button type="button" class="chip" data-platform="Other">Other</button>
+            </div>
+            <input id="gps_platform" name="gps_platform" type="text" placeholder="Or enter platform name…" aria-labelledby="platform-label">
+          </div>
+
+          <div class="field">
+            <label class="field__label--split" for="performance_goals">
+              <span>Performance goals <span class="field__hint">— what do you want to improve?</span></span>
+              <span class="field__count" data-count-for="performance_goals">0 / 400</span>
+            </label>
+            <textarea id="performance_goals" name="performance_goals" maxlength="400" placeholder="e.g. I want to improve my second-half output, I feel I'm losing speed late in matches, I want to understand my sprint load better…"></textarea>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label--split" for="other_notes">
+              <span>Anything else we should know <span class="field__hint">— optional</span></span>
+              <span class="field__count" data-count-for="other_notes">0 / 400</span>
+            </label>
+            <textarea id="other_notes" name="other_notes" class="textarea--sm" maxlength="400" placeholder="e.g. recent injury, tactical role change, specific concerns…"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Step 3: Video & GPS -->
+        <fieldset class="form-step" data-step="3" hidden>
+          <legend class="visually-hidden">Step 3 of 3 — Video and GPS data</legend>
+          <div>
+            <p class="form-step__eyebrow">Video &amp; GPS data</p>
+            <p class="form-step__title">Send us the match</p>
+          </div>
+          <p class="callout">Files stay private, are scanned, and deleted after your report is delivered.</p>
+
+          <div class="field">
+            <span class="field__label" id="video-label">Match video <span class="field__hint">— YouTube, Google Drive, Dropbox, WeTransfer</span></span>
+            <input type="file" id="video_file" accept="video/*" hidden>
+            <button type="button" class="dropzone" id="video-dropzone" aria-labelledby="video-label" aria-describedby="video-drop-state">
+              <span class="dropzone__title" id="video-drop-state">Drop a file here or click to browse</span>
+              <span class="dropzone__sub">or paste a share link below</span>
+            </button>
+            <input id="video_link" name="video_link" type="url" placeholder="Paste a Google Drive, Dropbox, YouTube or WeTransfer link…" aria-label="Match video share link">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <span class="field__label" id="gps-label">GPS export <span class="field__hint">— CSV / Excel from your platform, optional</span></span>
+            <input type="file" id="gps_file" accept=".csv,.xlsx,.xls" hidden>
+            <button type="button" class="dropzone" id="gps-dropzone" aria-labelledby="gps-label" aria-describedby="gps-drop-state">
+              <span class="dropzone__title" id="gps-drop-state">Drop a file here or click to browse</span>
+              <span class="dropzone__sub">or paste a share link below</span>
+            </button>
+            <input id="gps_link" name="gps_link" type="url" placeholder="Paste a link to your GPS export…" aria-label="GPS export share link">
+          </div>
+
+          <p class="form-note">Don't have a GPS export? Skip it and let us know in the notes — we'll still review your video.</p>
+        </fieldset>
+
+        <div class="form-footer">
+          <button type="button" class="form-footer__back" id="order-back" disabled>← Back</button>
+          <span class="form-footer__note" id="order-note" aria-live="polite">Step 1 of 3</span>
+          <button type="button" class="form-footer__next" id="order-next">
+            Continue
+            <svg class="icon" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </button>
+          <button type="submit" class="form-footer__next" id="order-submit" hidden>Submit analysis →</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success panel -->
+    <div class="order-success" id="order-success" hidden tabindex="-1">
+      <div class="order-success__check" aria-hidden="true">✓</div>
+      <p class="order-success__eyebrow">Submission received</p>
+      <h3 class="order-success__title">Thanks, <span id="success-name">Player</span>.</h3>
+      <p class="order-success__text">Your data is in the queue. Here's exactly what happens next — we'll be in touch at <strong id="success-email">your email</strong>.</p>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__num">01</span>
+          <div>
+            <p class="timeline__heading">Confirmation email</p>
+            <p class="timeline__text">Sent in the next few minutes.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__num">02</span>
+          <div>
+            <p class="timeline__heading">Analysis begins</p>
+            <p class="timeline__text">We review your video and GPS data — combining physical output with match-context evaluation.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__num">03</span>
+          <div>
+            <p class="timeline__heading">Report delivery</p>
+            <p class="timeline__text">Your personalised report and training programme arrive within 5 working days.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__num">04</span>
+          <div>
+            <p class="timeline__heading">1:1 consultation</p>
+            <p class="timeline__text">We schedule a ~30-minute online call to walk through the findings together.</p>
+          </div>
+        </li>
+      </ol>
+      <button type="button" class="link-reset" id="order-reset">Submit another →</button>
+    </div>
+  </div>
+</section>
