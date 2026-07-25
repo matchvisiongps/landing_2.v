@@ -22,6 +22,11 @@
   var LEVELS = ['Professional (1st Division)', 'Professional (2nd Division)', 'Semi-Professional (3rd / 4th Division)', 'Amateur — Competitive', 'Amateur — Recreational', 'Youth / Academy', 'University / College'];
   var RESULTS = ['Win', 'Draw', 'Loss'];
 
+  // Nationalities (name + flag emoji) — data only, kept out of the HTML.
+  var COUNTRIES = [
+    ['Afghanistan', '🇦🇫'], ['Albania', '🇦🇱'], ['Algeria', '🇩🇿'], ['Andorra', '🇦🇩'], ['Angola', '🇦🇴'], ['Antigua and Barbuda', '🇦🇬'], ['Argentina', '🇦🇷'], ['Armenia', '🇦🇲'], ['Australia', '🇦🇺'], ['Austria', '🇦🇹'], ['Azerbaijan', '🇦🇿'], ['Bahamas', '🇧🇸'], ['Bahrain', '🇧🇭'], ['Bangladesh', '🇧🇩'], ['Barbados', '🇧🇧'], ['Belarus', '🇧🇾'], ['Belgium', '🇧🇪'], ['Belize', '🇧🇿'], ['Benin', '🇧🇯'], ['Bhutan', '🇧🇹'], ['Bolivia', '🇧🇴'], ['Bosnia and Herzegovina', '🇧🇦'], ['Botswana', '🇧🇼'], ['Brazil', '🇧🇷'], ['Brunei', '🇧🇳'], ['Bulgaria', '🇧🇬'], ['Burkina Faso', '🇧🇫'], ['Burundi', '🇧🇮'], ['Cabo Verde', '🇨🇻'], ['Cambodia', '🇰🇭'], ['Cameroon', '🇨🇲'], ['Canada', '🇨🇦'], ['Central African Republic', '🇨🇫'], ['Chad', '🇹🇩'], ['Chile', '🇨🇱'], ['China', '🇨🇳'], ['Colombia', '🇨🇴'], ['Comoros', '🇰🇲'], ['Congo (Brazzaville)', '🇨🇬'], ['Congo (Kinshasa)', '🇨🇩'], ['Costa Rica', '🇨🇷'], ['Côte d’Ivoire', '🇨🇮'], ['Croatia', '🇭🇷'], ['Cuba', '🇨🇺'], ['Cyprus', '🇨🇾'], ['Czech Republic', '🇨🇿'], ['Denmark', '🇩🇰'], ['Djibouti', '🇩🇯'], ['Dominica', '🇩🇲'], ['Dominican Republic', '🇩🇴'], ['Ecuador', '🇪🇨'], ['Egypt', '🇪🇬'], ['El Salvador', '🇸🇻'], ['Equatorial Guinea', '🇬🇶'], ['Eritrea', '🇪🇷'], ['Estonia', '🇪🇪'], ['Eswatini', '🇸🇿'], ['Ethiopia', '🇪🇹'], ['Fiji', '🇫🇯'], ['Finland', '🇫🇮'], ['France', '🇫🇷'], ['Gabon', '🇬🇦'], ['Gambia', '🇬🇲'], ['Georgia', '🇬🇪'], ['Germany', '🇩🇪'], ['Ghana', '🇬🇭'], ['Greece', '🇬🇷'], ['Grenada', '🇬🇩'], ['Guatemala', '🇬🇹'], ['Guinea', '🇬🇳'], ['Guinea-Bissau', '🇬🇼'], ['Guyana', '🇬🇾'], ['Haiti', '🇭🇹'], ['Honduras', '🇭🇳'], ['Hungary', '🇭🇺'], ['Iceland', '🇮🇸'], ['India', '🇮🇳'], ['Indonesia', '🇮🇩'], ['Iran', '🇮🇷'], ['Iraq', '🇮🇶'], ['Ireland', '🇮🇪'], ['Israel', '🇮🇱'], ['Italy', '🇮🇹'], ['Jamaica', '🇯🇲'], ['Japan', '🇯🇵'], ['Jordan', '🇯🇴'], ['Kazakhstan', '🇰🇿'], ['Kenya', '🇰🇪'], ['Kiribati', '🇰🇮'], ['Kosovo', '🇽🇰'], ['Kuwait', '🇰🇼'], ['Kyrgyzstan', '🇰🇬'], ['Laos', '🇱🇦'], ['Latvia', '🇱🇻'], ['Lebanon', '🇱🇧'], ['Lesotho', '🇱🇸'], ['Liberia', '🇱🇷'], ['Libya', '🇱🇾'], ['Liechtenstein', '🇱🇮'], ['Lithuania', '🇱🇹'], ['Luxembourg', '🇱🇺'], ['Madagascar', '🇲🇬'], ['Malawi', '🇲🇼'], ['Malaysia', '🇲🇾'], ['Maldives', '🇲🇻'], ['Mali', '🇲🇱'], ['Malta', '🇲🇹'], ['Marshall Islands', '🇲🇭'], ['Mauritania', '🇲🇷'], ['Mauritius', '🇲🇺'], ['Mexico', '🇲🇽'], ['Micronesia', '🇫🇲'], ['Moldova', '🇲🇩'], ['Monaco', '🇲🇨'], ['Mongolia', '🇲🇳'], ['Montenegro', '🇲🇪'], ['Morocco', '🇲🇦'], ['Mozambique', '🇲🇿'], ['Myanmar', '🇲🇲'], ['Namibia', '🇳🇦'], ['Nauru', '🇳🇷'], ['Nepal', '🇳🇵'], ['Netherlands', '🇳🇱'], ['New Zealand', '🇳🇿'], ['Nicaragua', '🇳🇮'], ['Niger', '🇳🇪'], ['Nigeria', '🇳🇬'], ['North Korea', '🇰🇵'], ['North Macedonia', '🇲🇰'], ['Norway', '🇳🇴'], ['Oman', '🇴🇲'], ['Pakistan', '🇵🇰'], ['Palau', '🇵🇼'], ['Palestine', '🇵🇸'], ['Panama', '🇵🇦'], ['Papua New Guinea', '🇵🇬'], ['Paraguay', '🇵🇾'], ['Peru', '🇵🇪'], ['Philippines', '🇵🇭'], ['Poland', '🇵🇱'], ['Portugal', '🇵🇹'], ['Qatar', '🇶🇦'], ['Romania', '🇷🇴'], ['Russia', '🇷🇺'], ['Rwanda', '🇷🇼'], ['Saint Kitts and Nevis', '🇰🇳'], ['Saint Lucia', '🇱🇨'], ['Saint Vincent and the Grenadines', '🇻🇨'], ['Samoa', '🇼🇸'], ['San Marino', '🇸🇲'], ['São Tomé and Príncipe', '🇸🇹'], ['Saudi Arabia', '🇸🇦'], ['Senegal', '🇸🇳'], ['Serbia', '🇷🇸'], ['Seychelles', '🇸🇨'], ['Sierra Leone', '🇸🇱'], ['Singapore', '🇸🇬'], ['Slovakia', '🇸🇰'], ['Slovenia', '🇸🇮'], ['Solomon Islands', '🇸🇧'], ['Somalia', '🇸🇴'], ['South Africa', '🇿🇦'], ['South Korea', '🇰🇷'], ['South Sudan', '🇸🇸'], ['Spain', '🇪🇸'], ['Sri Lanka', '🇱🇰'], ['Sudan', '🇸🇩'], ['Suriname', '🇸🇷'], ['Sweden', '🇸🇪'], ['Switzerland', '🇨🇭'], ['Syria', '🇸🇾'], ['Taiwan', '🇹🇼'], ['Tajikistan', '🇹🇯'], ['Tanzania', '🇹🇿'], ['Thailand', '🇹🇭'], ['Timor-Leste', '🇹🇱'], ['Togo', '🇹🇬'], ['Tonga', '🇹🇴'], ['Trinidad and Tobago', '🇹🇹'], ['Tunisia', '🇹🇳'], ['Turkey', '🇹🇷'], ['Turkmenistan', '🇹🇲'], ['Tuvalu', '🇹🇻'], ['Uganda', '🇺🇬'], ['Ukraine', '🇺🇦'], ['United Arab Emirates', '🇦🇪'], ['United Kingdom', '🇬🇧'], ['United States', '🇺🇸'], ['Uruguay', '🇺🇾'], ['Uzbekistan', '🇺🇿'], ['Vanuatu', '🇻🇺'], ['Vatican City', '🇻🇦'], ['Venezuela', '🇻🇪'], ['Vietnam', '🇻🇳'], ['Yemen', '🇾🇪'], ['Zambia', '🇿🇲'], ['Zimbabwe', '🇿🇼']
+  ];
+
   var rules = {
     required: function (label) {
       return function (value) {
@@ -65,6 +70,7 @@
     email: [rules.required('Email'), rules.email()],
     position: [rules.oneOf(POSITIONS, 'position')],
     level: [rules.oneOf(LEVELS, 'level')],
+    nationality: [rules.required('Nationality')],
     age: [rules.required('Age'), rules.range(13, 60, 'Age')],
     minutes_played: [rules.required('Minutes played'), rules.range(1, 130, 'Minutes')],
     match_result: [rules.oneOf(RESULTS, 'match result')],
@@ -73,14 +79,12 @@
   };
 
   var stepFields = {
-    1: ['first_name', 'last_name', 'jersey_number', 'email', 'position', 'level', 'age'],
+    1: ['first_name', 'last_name', 'jersey_number', 'email', 'position', 'level', 'nationality', 'age'],
     2: ['minutes_played', 'match_result', 'performance_goals'],
     3: ['video_link']
   };
 
   /* ---------- Elements ---------- */
-  var wizard = document.getElementById('order-wizard');
-  var successPanel = document.getElementById('order-success');
   var savedFlag = document.getElementById('order-saved');
   var backBtn = document.getElementById('order-back');
   var nextBtn = document.getElementById('order-next');
@@ -106,9 +110,9 @@
 
   function values() {
     var out = {};
-    ['first_name', 'last_name', 'jersey_number', 'team_name', 'email', 'position', 'level', 'age',
-      'minutes_played', 'match_result', 'gps_platform', 'performance_goals', 'other_notes',
-      'video_link', 'gps_link'].forEach(function (key) {
+    ['first_name', 'last_name', 'jersey_number', 'team_name', 'email', 'position', 'level',
+      'nationality', 'age', 'minutes_played', 'match_result', 'gps_platform', 'performance_goals',
+      'other_notes', 'video_link', 'gps_link'].forEach(function (key) {
       var el = fieldEl(key);
       out[key] = el ? el.value : '';
     });
@@ -408,22 +412,31 @@
     }
 
     state.submitting = true;
-    submitBtn.textContent = 'Submitting…';
+    submitBtn.textContent = 'Processing…';
     submitBtn.disabled = true;
 
     var current = values();
 
+    // Remember the buyer so the post-payment thank-you page can greet them.
+    try {
+      localStorage.setItem('mv-buyer', JSON.stringify({
+        name: (current.first_name || '').trim(),
+        email: current.email || ''
+      }));
+    } catch (e) { /* private mode */ }
+
     function finish() {
+      // The draft autosave has served its purpose once details are captured.
       clearStorage();
       state.submitting = false;
-      submitBtn.textContent = 'Submit analysis →';
+      submitBtn.textContent = 'Proceed to checkout →';
       submitBtn.disabled = false;
 
-      document.getElementById('success-name').textContent = (current.first_name || 'Player').trim();
-      document.getElementById('success-email').textContent = current.email || 'your email';
-      wizard.hidden = true;
-      successPanel.hidden = false;
-      successPanel.focus();
+      // Hand off to the checkout confirmation modal (js/modals.js). It carries
+      // the buyer to Stripe; after payment Stripe returns them to thank-you.html.
+      if (window.MVModals && window.MVModals.openCheckout) {
+        window.MVModals.openCheckout({ product: 'review', name: (current.first_name || '').trim() });
+      }
     }
 
     try {
@@ -440,27 +453,22 @@
     }
   });
 
-  /* ---------- Reset ("Submit another") ---------- */
-  document.getElementById('order-reset').addEventListener('click', function () {
-    clearStorage();
-    form.reset();
-    state.touched = {};
-    state.videoFile = '';
-    state.gpsFile = '';
-    syncChips('');
-    ['performance_goals', 'other_notes'].forEach(function (name) {
-      var el = fieldEl(name);
-      if (el) updateCount(el);
+  /* ---------- Populate nationality dropdown ---------- */
+  function populateCountries() {
+    var select = form.querySelector('[data-countries]');
+    if (!select) return;
+    var frag = document.createDocumentFragment();
+    COUNTRIES.forEach(function (c) {
+      var opt = document.createElement('option');
+      opt.value = c[0];
+      opt.textContent = c[1] + '  ' + c[0];
+      frag.appendChild(opt);
     });
-    Array.prototype.forEach.call(form.querySelectorAll('.field__error'), function (el) {
-      el.textContent = '';
-    });
-    successPanel.hidden = true;
-    wizard.hidden = false;
-    goTo(1);
-  });
+    select.appendChild(frag);
+  }
 
   /* ---------- Init ---------- */
+  populateCountries();
   restore();
   if (platformInput) syncChips(platformInput.value);
   ['performance_goals', 'other_notes'].forEach(function (name) {
