@@ -3007,3 +3007,87 @@ button {
     flex: 1;
   }
 }
+
+/* ==========================================================================
+   MATCHVISION — Pill navigation buttons (circular-chevron style)
+   Matches the "Back to home" pill. Used for the order-form Back / Continue /
+   Proceed-to-checkout controls so every wayfinding arrow reads the same.
+   ========================================================================== */
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: background-color var(--dur-fast) ease, border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease, opacity var(--dur-fast) ease;
+}
+
+.nav-pill__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.nav-pill__chev {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-pill__chev svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Back — light pill, navy chevron badge on the left */
+.nav-pill--back {
+  padding: 7px 22px 7px 7px;
+  background: var(--color-white);
+  border: 1px solid var(--line-12);
+  box-shadow: 0 2px 10px rgba(20, 20, 20, 0.06);
+}
+
+.nav-pill--back .nav-pill__chev {
+  background: var(--color-navy);
+  color: var(--color-cream);
+}
+
+.nav-pill--back .nav-pill__label {
+  color: var(--color-ink);
+}
+
+.nav-pill--back:hover:not(:disabled) {
+  border-color: var(--color-navy);
+  box-shadow: 0 6px 18px rgba(22, 52, 95, 0.16);
+}
+
+.nav-pill--back:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Continue / Proceed — navy pill, cream chevron badge on the right */
+.nav-pill--next {
+  padding: 7px 7px 7px 22px;
+  background: var(--color-navy);
+}
+
+.nav-pill--next .nav-pill__label {
+  color: var(--color-cream);
+}
+
+.nav-pill--next .nav-pill__chev {
+  background: var(--color-cream);
+  color: var(--color-navy);
+}
+
+.nav-pill--next:hover {
+  background: var(--color-navy-hover);
+  box-shadow: 0 6px 18px rgba(22, 52, 95, 0.22);
+}
