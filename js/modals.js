@@ -167,7 +167,6 @@
     if (endedEl) endedEl.hidden = false;
     if (promoCta) {
       promoCta.setAttribute('href', '#blueprint');
-      promoCta.lastChild && (promoCta.textContent = '');
       promoCta.innerHTML = '<svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-download"/></svg> View the Blueprint';
     }
   }
