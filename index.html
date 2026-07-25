@@ -945,13 +945,19 @@
               </fieldset>
 
               <div class="form-footer">
-                <button type="button" class="form-footer__back" id="order-back" disabled>← Back</button>
-                <span class="form-footer__note" id="order-note" aria-live="polite">Step 1 of 3</span>
-                <button type="button" class="form-footer__next" id="order-next">
-                  Continue
-                  <svg class="icon" width="14" height="14" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                <button type="button" class="nav-pill nav-pill--back" id="order-back" disabled aria-label="Back to previous step">
+                  <span class="nav-pill__chev"><svg aria-hidden="true"><use href="#i-chevron-left"/></svg></span>
+                  <span class="nav-pill__label">Back</span>
                 </button>
-                <button type="submit" class="form-footer__next" id="order-submit" hidden>Proceed to checkout →</button>
+                <span class="form-footer__note" id="order-note" aria-live="polite">Step 1 of 3</span>
+                <button type="button" class="nav-pill nav-pill--next" id="order-next">
+                  <span class="nav-pill__label">Continue</span>
+                  <span class="nav-pill__chev"><svg aria-hidden="true"><use href="#i-chevron-right"/></svg></span>
+                </button>
+                <button type="submit" class="nav-pill nav-pill--next" id="order-submit" hidden>
+                  <span class="nav-pill__label">Proceed to checkout</span>
+                  <span class="nav-pill__chev"><svg aria-hidden="true"><use href="#i-chevron-right"/></svg></span>
+                </button>
               </div>
             </form>
           </div>

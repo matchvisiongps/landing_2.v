@@ -76,12 +76,16 @@ section sits between `<!-- component:name -->` markers.
 All runtime config lives in `window.MV_CONFIG` at the top of `js/main.js`
 (shared with `js/forms.js` and `js/modals.js`):
 
-- `checkout.review` — Stripe checkout URL for The Pro Match Report (€129).
-  Set that Stripe session's `success_url` to **`thank-you.html`**.
-- `checkout.blueprint` — Stripe checkout URL for the GPS Blueprint (€19).
-  Set that Stripe session's `success_url` to your **PDF download link**.
-  While a checkout URL is empty, the confirmation modal captures the buyer
-  and tells them the secure link is on its way (no dead ends).
+- `checkout.review` — Stripe Payment Link for The Pro Match Report (€129).
+  In the Stripe dashboard set that link's **"After payment" → redirect** to
+  `https://<your-domain>/thank-you.html` so the buyer lands on the thank-you
+  page.
+- `checkout.blueprint` — Stripe Payment Link for the GPS Blueprint (€19).
+  Set that link's **"After payment" → redirect** to your **PDF download link**.
+
+  Both Payment Links are already wired in `js/main.js`. If a checkout URL is
+  left empty, the confirmation modal instead captures the buyer and says the
+  secure link is on its way (no dead ends).
 - `spotsLeft` — monthly Pro Match Report capacity, injected into every
   `[data-spots]` element (ribbon, badges, reason-why note).
 - `saleEnd` — Blueprint launch-offer deadline for the promo countdown
