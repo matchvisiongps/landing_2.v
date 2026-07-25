@@ -108,6 +108,13 @@
     return form.elements[name] || null;
   }
 
+  // Update a pill button's visible label without disturbing its chevron badge.
+  function setBtnLabel(btn, text) {
+    if (!btn) return;
+    var label = btn.querySelector('.nav-pill__label');
+    if (label) { label.textContent = text; } else { btn.textContent = text; }
+  }
+
   function values() {
     var out = {};
     ['first_name', 'last_name', 'jersey_number', 'team_name', 'email', 'position', 'level',
@@ -412,7 +419,7 @@
     }
 
     state.submitting = true;
-    submitBtn.textContent = 'Processing…';
+    setBtnLabel(submitBtn, 'Processing…');
     submitBtn.disabled = true;
 
     var current = values();
@@ -429,7 +436,7 @@
       // The draft autosave has served its purpose once details are captured.
       clearStorage();
       state.submitting = false;
-      submitBtn.textContent = 'Proceed to checkout →';
+      setBtnLabel(submitBtn, 'Proceed to checkout');
       submitBtn.disabled = false;
 
       // Hand off to the checkout confirmation modal (js/modals.js). It carries

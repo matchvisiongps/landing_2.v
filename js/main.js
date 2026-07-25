@@ -21,7 +21,10 @@
      spotsLeft — monthly Pro Match Report capacity, injected into [data-spots].
      saleEnd   — Blueprint launch-offer deadline for the promo countdown. */
   window.MV_CONFIG = window.MV_CONFIG || {
-    checkout: { review: '', blueprint: '' },
+    checkout: {
+      review: 'https://buy.stripe.com/8x26oHfSogJofbd6x873G04',
+      blueprint: 'https://buy.stripe.com/cNieVd49GeBggfhf3E73G03'
+    },
     spotsLeft: 9,
     saleEnd: '2026-08-10T23:59:59'
   };
