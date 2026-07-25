@@ -1,73 +1,69 @@
-<!--
-  MATCHVISION component partial: hero
-  Source of truth: index.html (section between the matching
-  'component:hero' markers). Kept as a reusable reference for future
-  templating/SSG integration - update index.html first, then re-sync.
--->
-
+<!-- MATCHVISION component: hero
+     Reference partial extracted from index.html (source of truth).
+     Uses the shared icon sprite, css/ and js/ from the site root. -->
 <section class="hero" aria-labelledby="hero-title">
-  <p class="hero__badge">
-    <svg class="icon" width="15" height="15" aria-hidden="true"><use href="#i-shield"/></svg>
-    Certified Analyst by FC Barcelona Innovation Hub · 3 years in Czech div 1–4
-  </p>
-  <h1 class="hero__title" id="hero-title">See what the pros see — in your own game.</h1>
-  <p class="hero__lead">Whether you play the game or coach it — turn match video and GPS data into decisions that win.</p>
-  <div class="hero__actions">
-    <a class="btn btn--primary btn--lg" href="#submit">Analyze my game</a>
-    <a class="btn btn--ghost btn--lg" href="#blueprint">Download Blueprint</a>
-  </div>
-</section>
+        <p class="hero__badge">
+          <svg class="icon" width="15" height="15" aria-hidden="true"><use href="#i-shield"/></svg>
+          Certified Analyst by FC Barcelona Innovation Hub · 3 years in Czech div 1–4
+        </p>
+        <h1 class="hero__title" id="hero-title">See what the pros see — in your own game.</h1>
+        <p class="hero__lead">Whether you play the game or coach it — turn match video and GPS data into decisions that win.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#pro-report" data-goto="review">Analyze my game</a>
+          <a class="btn btn--ghost btn--lg" href="#blueprint" data-goto="blueprint">Download Blueprint</a>
+        </div>
+      </section>
 
-<!-- Trust bar -->
-<section class="trust" aria-label="Experience and certification">
-  <div class="trust__group">
-    <span class="trust__label">EXPERIENCE WITH</span>
-    <ul class="trust__logos" role="list">
-      <li class="logo-chip" tabindex="0">
-        <span class="logo-chip__circle">
-          <img src="assets/images/club-fkmb.webp" alt="FK Mladá Boleslav" width="160" height="160" loading="lazy">
-        </span>
-        <span class="tooltip" role="tooltip">
-          <span class="tooltip__title">FK Mladá Boleslav</span>
-          <span class="tooltip__sub">Czech 1st division</span>
-        </span>
-      </li>
-      <li class="logo-chip" tabindex="0">
-        <span class="logo-chip__circle">
-          <img src="assets/images/club-slavia.webp" alt="SK Slavia Praha" width="160" height="160" loading="lazy">
-        </span>
-        <span class="tooltip" role="tooltip">
-          <span class="tooltip__title">SK Slavia Praha</span>
-          <span class="tooltip__sub">Czech 1st division</span>
-        </span>
-      </li>
-      <li class="logo-chip" tabindex="0">
-        <span class="logo-chip__circle">
-          <img src="assets/images/club-kladno.webp" alt="SK Kladno" width="160" height="160" loading="lazy">
-        </span>
-        <span class="tooltip" role="tooltip">
-          <span class="tooltip__title">SK Kladno</span>
-          <span class="tooltip__sub">Czech 2nd division</span>
-        </span>
-      </li>
-    </ul>
-  </div>
+      <!-- Trust bar -->
+      <section class="trust" aria-label="Experience and certification">
+        <div class="trust__group">
+          <span class="trust__label">EXPERIENCE WITH</span>
+          <ul class="trust__logos" role="list">
+            <li class="logo-chip" tabindex="0">
+              <span class="logo-chip__circle">
+                <img src="assets/images/club-fkmb.webp" alt="FK Mladá Boleslav" width="160" height="160" loading="lazy">
+              </span>
+              <span class="tooltip" role="tooltip">
+                <span class="tooltip__title">FK Mladá Boleslav</span>
+                <span class="tooltip__sub">Czech 1st division</span>
+              </span>
+            </li>
+            <li class="logo-chip" tabindex="0">
+              <span class="logo-chip__circle">
+                <img src="assets/images/club-slavia.webp" alt="SK Slavia Praha" width="160" height="160" loading="lazy">
+              </span>
+              <span class="tooltip" role="tooltip">
+                <span class="tooltip__title">SK Slavia Praha</span>
+                <span class="tooltip__sub">Czech 1st division</span>
+              </span>
+            </li>
+            <li class="logo-chip" tabindex="0">
+              <span class="logo-chip__circle">
+                <img src="assets/images/club-kladno.webp" alt="SK Kladno" width="160" height="160" loading="lazy">
+              </span>
+              <span class="tooltip" role="tooltip">
+                <span class="tooltip__title">SK Kladno</span>
+                <span class="tooltip__sub">Czech 2nd division</span>
+              </span>
+            </li>
+          </ul>
+        </div>
 
-  <span class="trust__divider" aria-hidden="true"></span>
+        <span class="trust__divider" aria-hidden="true"></span>
 
-  <div class="trust__group">
-    <span class="trust__label">
-      <svg class="icon" width="14" height="14" aria-hidden="true"><use href="#i-shield"/></svg>
-      CERTIFIED WITH
-    </span>
-    <span class="logo-chip" tabindex="0">
-      <span class="logo-chip__circle">
-        <img src="assets/images/cert-fcb-hub.webp" alt="FC Barcelona Innovation Hub" width="160" height="160" loading="lazy">
-      </span>
-      <span class="tooltip" role="tooltip">
-        <span class="tooltip__title">FC Barcelona Innovation Hub</span>
-        <span class="tooltip__sub">Certified Analyst program</span>
-      </span>
-    </span>
-  </div>
-</section>
+        <div class="trust__group">
+          <span class="trust__label">
+            <svg class="icon" width="14" height="14" aria-hidden="true"><use href="#i-shield"/></svg>
+            CERTIFIED WITH
+          </span>
+          <span class="logo-chip" tabindex="0">
+            <span class="logo-chip__circle">
+              <img src="assets/images/cert-fcb-hub.webp" alt="FC Barcelona Innovation Hub" width="160" height="160" loading="lazy">
+            </span>
+            <span class="tooltip" role="tooltip">
+              <span class="tooltip__title">FC Barcelona Innovation Hub</span>
+              <span class="tooltip__sub">Certified Analyst program</span>
+            </span>
+          </span>
+        </div>
+      </section>

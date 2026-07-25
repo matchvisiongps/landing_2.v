@@ -1,32 +1,28 @@
-<!--
-  MATCHVISION component partial: review-band
-  Source of truth: index.html (section between the matching
-  'component:review-band' markers). Kept as a reusable reference for future
-  templating/SSG integration - update index.html first, then re-sync.
--->
-
-<section class="review-band" aria-labelledby="review-band-title">
-  <div class="container review-band__grid">
-    <div class="review-band__content reveal">
-      <p class="review-band__eyebrow">Inside the review</p>
-      <h2 class="review-band__title" id="review-band-title">A report you'll actually use.</h2>
-      <p class="review-band__text">Every review breaks your match into the four areas that matter — running, shooting, passing, positioning — then tells you exactly what to work on and how.</p>
-      <ul class="feature-list">
-        <li>Full performance report (PDF)</li>
-        <li>Data visualised per match phase</li>
-        <li>Concrete training advice</li>
-      </ul>
-    </div>
-    <div class="review-band__shots reveal" data-reveal-delay="1">
-      <!-- assets/images/report-page-1.webp -->
-      <!-- IMAGE PLACEHOLDER: report page 1 screenshot, ~800×640px -->
-      <div class="report-placeholder" role="img" aria-label="Placeholder: report page 1 screenshot">report page 1<br>screenshot</div>
-      <!-- assets/images/report-heatmap.webp -->
-      <!-- IMAGE PLACEHOLDER: heatmap / positioning page, ~800×640px -->
-      <div class="report-placeholder" role="img" aria-label="Placeholder: heatmap and positioning page">heatmap /<br>positioning page</div>
-      <!-- assets/images/report-advice.webp -->
-      <!-- IMAGE PLACEHOLDER: advice section screenshot, ~1640×360px -->
-      <div class="report-placeholder report-placeholder--wide" role="img" aria-label="Placeholder: advice section screenshot">advice section screenshot</div>
-    </div>
-  </div>
-</section>
+<!-- MATCHVISION component: review-band ("Inside the review" navy band)
+     Reference partial extracted from index.html — used on the Pro Match Report page. -->
+<!-- Inside the review (navy band) -->
+      <section class="review-band" aria-labelledby="review-inside-title">
+        <div class="container review-band__grid">
+          <div class="review-band__content">
+            <p class="review-band__eyebrow">Inside the review</p>
+            <h2 class="review-band__title" id="review-inside-title">A report you'll actually use.</h2>
+            <p class="review-band__text">Every review breaks your match into the four areas that matter — running, shooting, passing, positioning — then tells you exactly what to work on and how.</p>
+            <ul class="feature-list">
+              <li>Full performance report (PDF)</li>
+              <li>Data visualised per match phase</li>
+              <li>Concrete training advice</li>
+            </ul>
+          </div>
+          <div class="review-band__shots">
+            <!-- assets/images/report-page-1.webp -->
+            <!-- IMAGE PLACEHOLDER: report page 1 screenshot, ~800×640px -->
+            <div class="report-placeholder" role="img" aria-label="Placeholder: report page 1 screenshot">report page 1<br>screenshot</div>
+            <!-- assets/images/report-heatmap.webp -->
+            <!-- IMAGE PLACEHOLDER: heatmap / positioning page, ~800×640px -->
+            <div class="report-placeholder" role="img" aria-label="Placeholder: heatmap and positioning page">heatmap /<br>positioning page</div>
+            <!-- assets/images/report-advice.webp -->
+            <!-- IMAGE PLACEHOLDER: advice section screenshot, ~1640×360px -->
+            <div class="report-placeholder report-placeholder--wide" role="img" aria-label="Placeholder: advice section screenshot">advice section screenshot</div>
+          </div>
+        </div>
+      </section>

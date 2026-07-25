@@ -1,60 +1,64 @@
-<!--
-  MATCHVISION component partial: pricing
-  Source of truth: index.html (section between the matching
-  'component:pricing' markers). Kept as a reusable reference for future
-  templating/SSG integration - update index.html first, then re-sync.
--->
-
+<!-- MATCHVISION component: pricing
+     Reference partial extracted from index.html (source of truth).
+     Uses the shared icon sprite, css/ and js/ from the site root. -->
 <section class="pricing" aria-label="Products and pricing">
 
-  <article class="price-card reveal" id="review">
-    <p class="price-card__flag price-card__flag--amber">
-      <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-clock"/></svg>
-      Limited monthly capacity
-    </p>
-    <div class="price-card__top">
-      <span class="price-card__icon">
-        <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-target"/></svg>
-      </span>
-      <span class="price-card__price">€129</span>
-    </div>
-    <h2 class="price-card__title">Complete Performance Review</h2>
-    <p class="price-card__audience">For players, scouts, coaches &amp; parents</p>
-    <p class="price-card__desc">Upload your match footage—with or without GPS data—and receive a professional performance review covering your technical, tactical and physical performance, together with clear recommendations on what to improve next.</p>
-    <ul class="feature-list">
-      <li>Running, shooting, passing &amp; positioning data</li>
-      <li>Personal advice — what to train next</li>
-      <li>Works with match video alone, or video + GPS</li>
-    </ul>
-    <a class="btn btn--primary btn--md" href="#submit">
-      <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-analyze"/></svg>
-      Analyze my game
-    </a>
-  </article>
+        <article class="price-card reveal">
+          <p class="price-card__flag price-card__flag--amber">
+            <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-clock"/></svg>
+            Limited monthly capacity — <span data-spots>9</span> left
+          </p>
+          <div class="price-card__top">
+            <span class="price-card__icon">
+              <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-target"/></svg>
+            </span>
+            <span class="price-card__price">€129</span>
+          </div>
+          <h2 class="price-card__title">The Pro Match Report</h2>
+          <p class="price-card__audience">For players, scouts, coaches &amp; parents</p>
+          <p class="price-card__desc">Upload your match footage — with or without GPS data — and find out exactly where you stand, and what to fix first. A data analyst personally reviews your full match and hands you a clear performance breakdown across technical, tactical and physical play, with actions you can start training tomorrow.</p>
+          <ul class="feature-list">
+            <li>Running, shooting, passing &amp; positioning data</li>
+            <li>Personal advice — what to train next</li>
+            <li>Works with match video alone, or video + GPS</li>
+          </ul>
+          <div class="price-card__foot">
+            <a class="btn btn--primary btn--md" href="#pro-report" data-goto="review">
+              <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-analyze"/></svg>
+              Analyze my game
+            </a>
+            <p class="price-card__note">
+              <svg class="icon" width="13" height="13" aria-hidden="true"><use href="#i-shield"/></svg>
+              Not 3 clear takeaways? Money back.
+            </p>
+          </div>
+        </article>
 
-  <article class="price-card reveal" id="blueprint" data-reveal-delay="1">
-    <p class="price-card__flag price-card__flag--purple">
-      <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-education"/></svg>
-      Educational
-    </p>
-    <div class="price-card__top">
-      <span class="price-card__icon">
-        <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-blueprint"/></svg>
-      </span>
-      <span class="price-card__price"><s class="price-card__price-old">€49</s> €29</span>
-    </div>
-    <h2 class="price-card__title">GPS Football Data Blueprint</h2>
-    <p class="price-card__audience">For coaches, analysts &amp; fitness trainers</p>
-    <p class="price-card__desc">A complete guide: 8 key GPS topics and 28 conditioning drills you can run with or without a tracker. Grounded in 3 seasons of real data across Czech divisions 1–4.</p>
-    <ul class="feature-list">
-      <li>8 key GPS data topics explained</li>
-      <li>28 conditioning drills — tracker optional</li>
-      <li>Instant PDF download</li>
-    </ul>
-    <a class="btn btn--primary btn--md" href="#submit">
-      <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-download"/></svg>
-      Download Blueprint
-    </a>
-  </article>
+        <article class="price-card reveal" data-reveal-delay="1">
+          <p class="price-card__flag price-card__flag--purple">
+            <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-education"/></svg>
+            Educational
+          </p>
+          <div class="price-card__top">
+            <span class="price-card__icon">
+              <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-blueprint"/></svg>
+            </span>
+            <span class="price-card__price"><s class="price-card__price-old">€49</s> €19</span>
+          </div>
+          <h2 class="price-card__title">GPS Football Data Blueprint</h2>
+          <p class="price-card__audience">For coaches, analysts &amp; fitness trainers</p>
+          <p class="price-card__desc">Stop building sessions on gut feeling. Get 28 ready-to-run conditioning drills — with or without a GPS tracker — backed by 3 real seasons of data across Czech divisions 1–4, so every drill has a reason behind it.</p>
+          <ul class="feature-list">
+            <li>Understand the 8 GPS numbers that actually matter</li>
+            <li>28 drills ready to run — tracker optional</li>
+            <li>Open it and start today — instant PDF download</li>
+          </ul>
+          <div class="price-card__foot">
+            <a class="btn btn--primary btn--md" href="#blueprint" data-goto="blueprint">
+              <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-download"/></svg>
+              Download Blueprint
+            </a>
+          </div>
+        </article>
 
-</section>
+      </section>

@@ -1,31 +1,39 @@
-<!--
-  MATCHVISION component partial: footer
-  Source of truth: index.html (section between the matching
-  'component:footer' markers). Kept as a reusable reference for future
-  templating/SSG integration - update index.html first, then re-sync.
--->
-
-  <footer class="site-footer">
-<div class="site-footer__top">
-  <div class="site-footer__brand">
-    <img src="assets/images/logo-matchvision-white.webp" alt="MATCHVISION" width="619" height="120" loading="lazy">
-    <p class="site-footer__blurb">Football performance analysis by Thomas and Daniel — Certified Analysts by FC Barcelona Innovation Hub.</p>
-  </div>
-  <nav class="site-footer__cols" aria-label="Footer">
-    <div class="site-footer__col">
-      <span class="site-footer__col-title">PRODUCTS</span>
-      <a href="#blueprint">GPS Data Blueprint</a>
-      <a href="#review">Performance Review</a>
+<!-- MATCHVISION component: footer
+     Reference partial extracted from index.html (source of truth).
+     Uses the shared icon sprite, css/ and js/ from the site root. -->
+<footer class="site-footer">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a href="#home" data-goto="home" aria-label="MATCHVISION — home">
+          <img src="assets/images/logo-matchvision-white.webp" alt="MATCHVISION" width="619" height="120" loading="lazy">
+        </a>
+        <p class="site-footer__blurb">Football performance analysis by Thomas and Daniel — Certified Analysts by FC Barcelona Innovation Hub.</p>
+      </div>
+      <nav class="site-footer__cols" aria-label="Footer">
+        <div class="site-footer__col">
+          <span class="site-footer__col-title">PRODUCTS</span>
+          <a href="#blueprint" data-goto="blueprint">GPS Data Blueprint</a>
+          <a href="#pro-report" data-goto="review">The Pro Match Report</a>
+        </div>
+        <div class="site-footer__col">
+          <span class="site-footer__col-title">LEGAL</span>
+          <a href="legal.html#privacy">Privacy Policy</a>
+          <a href="legal.html#terms">Terms &amp; Conditions</a>
+          <a href="legal.html#disclaimer">Disclaimer</a>
+        </div>
+        <div class="site-footer__col">
+          <span class="site-footer__col-title">CONTACT</span>
+          <a href="mailto:team@matchvision.cz">team@matchvision.cz</a>
+          <a href="https://instagram.com/matchvision_performance" rel="noopener" target="_blank">@matchvision_performance</a>
+        </div>
+      </nav>
     </div>
-    <div class="site-footer__col">
-      <span class="site-footer__col-title">CONTACT</span>
-      <a href="mailto:team@matchvision.cz">team@matchvision.cz</a>
-      <a href="https://instagram.com/matchvision_performance" rel="noopener" target="_blank">@matchvision_performance</a>
+    <div class="site-footer__bottom">
+      <span>© <span id="footer-year">2026</span> MATCHVISION</span>
+      <div class="site-footer__legal">
+        <a href="legal.html#privacy">Privacy</a>
+        <a href="legal.html#terms">Terms</a>
+        <a href="legal.html#disclaimer">Disclaimer</a>
+      </div>
     </div>
-  </nav>
-</div>
-<div class="site-footer__bottom">
-  <span>© <span id="footer-year">2026</span> MATCHVISION</span>
-  <span>Made for players &amp; coaches who take the game seriously</span>
-</div>
   </footer>
