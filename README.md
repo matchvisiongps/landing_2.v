@@ -139,6 +139,16 @@ optional) to any static host. Before going live:
   (`Organization`, two `Product` offers, `FAQPage`), per-page `document.title`,
   `robots.txt`, `sitemap.xml`, semantic H1–H3 hierarchy.
 
+## Cache busting (important for redeploys)
+
+CSS and JS are referenced with a version query, e.g. `css/style.css?v=2`.
+Browsers and static hosts cache these files aggressively — if you upload new
+files but the version query is unchanged, visitors may keep the **old** CSS/JS
+(which shows up as unstyled controls or stale behaviour). **Every time you
+deploy a change to a `.css` or `.js` file, bump the `?v=` number** in
+`index.html`, `legal.html` and `thank-you.html` (e.g. `?v=2` → `?v=3`). After
+deploying, do a hard refresh (Ctrl/Cmd + Shift + R) once to confirm.
+
 ## Browser support
 
 Evergreen Chrome, Edge, Firefox and Safari (iOS included). No IE support.
