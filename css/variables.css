@@ -48,8 +48,31 @@
 
   /* Accents */
   --color-amber: #f59e0b;
+  --color-amber-hover: #fbbf47;
+  --color-amber-text: #b45309; /* readable amber on light */
+  --color-amber-ink: #1a1206; /* dark text on amber fills */
+  --color-amber-08: rgba(245, 158, 11, 0.08);
+  --color-amber-10: rgba(245, 158, 11, 0.1);
+  --color-amber-14: rgba(245, 158, 11, 0.14);
+  --color-amber-15: rgba(245, 158, 11, 0.15);
+  --color-amber-22: rgba(245, 158, 11, 0.22);
+  --color-amber-40: rgba(245, 158, 11, 0.4);
+  --color-amber-45: rgba(245, 158, 11, 0.45);
   --color-purple: #7f2af0;
   --color-error: #c0392b;
+
+  /* Cream alpha (extra) */
+  --cream-75: rgba(247, 246, 242, 0.75);
+  --cream-15: rgba(247, 246, 242, 0.15);
+  --cream-08: rgba(247, 246, 242, 0.08);
+
+  /* Gradients */
+  --grad-agitation: linear-gradient(180deg, #16345f, #28211a);
+  --grad-reason: linear-gradient(135deg, #16345f, #234c82);
+
+  /* Radii (extra) */
+  --radius-rect: 14px;
+  --radius-lg: 20px;
 
   /* Typography */
   --font-sans: "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;

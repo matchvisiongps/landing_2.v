@@ -215,3 +215,101 @@
     height: 48px;
   }
 }
+
+/* ==========================================================================
+   Offer pages (Pro Match Report · Blueprint) — responsive
+   ========================================================================== */
+
+/* ---------- ≤ 960px — stack the offer hero + reason card ---------- */
+@media (max-width: 960px) {
+  .offer-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .reason__card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 36px;
+  }
+
+  .how__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- ≤ 720px — single column, vertical agitation flow ---------- */
+@media (max-width: 720px) {
+  .how__grid,
+  .how__grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .agitation {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .agitation__flow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .agitation__arrow {
+    padding: 6px 0;
+  }
+
+  .agitation__arrow svg {
+    transform: rotate(90deg);
+  }
+
+  .offer-box__price {
+    font-size: 46px;
+  }
+
+  .reason__big {
+    font-size: 48px;
+  }
+
+  .guarantee__card {
+    padding: 28px 22px;
+  }
+
+  .final-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .final-cta .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- ≤ 520px — let value rows breathe ---------- */
+@media (max-width: 520px) {
+  .value-stack__card {
+    padding: 8px 18px;
+  }
+
+  .value-row,
+  .value-row--top {
+    flex-wrap: wrap;
+  }
+
+  .value-row__price {
+    margin-left: 62px;
+  }
+
+  .value-row--bonus .value-row__price {
+    margin-left: 0;
+  }
+
+  .offer-box__body {
+    padding: 24px 20px;
+  }
+
+  .reason__panel {
+    padding: 26px 20px;
+  }
+}
