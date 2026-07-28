@@ -15,7 +15,7 @@
   //  - ask   : the "Ask a question" mini-form
   var WEBHOOKS = (window.MV_CONFIG && window.MV_CONFIG.webhooks) || {};
   var ORDER_WEBHOOK = WEBHOOKS.order || 'https://hook.eu1.make.com/0lr1kqqdlaep4naelq96nl9abkstuo1h';
-  var ASK_WEBHOOK = WEBHOOKS.ask || 'https://hook.eu1.make.com/sa4u6kb58s8f0x4azh76d3el6a6a5vlj';
+  var ASK_WEBHOOK = WEBHOOKS.ask || 'https://hook.eu1.make.com/fngk8x57dk1pa61b3adovp96by5ci0d2';
   var STORAGE_KEY = 'mv-analysis-form-v1';
   var TOTAL_STEPS = 3;
 

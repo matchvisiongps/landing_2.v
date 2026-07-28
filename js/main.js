@@ -30,7 +30,7 @@
     //  ask   → the "Ask a question" mini-form
     webhooks: {
       order: 'https://hook.eu1.make.com/0lr1kqqdlaep4naelq96nl9abkstuo1h',
-      ask: 'https://hook.eu1.make.com/sa4u6kb58s8f0x4azh76d3el6a6a5vlj'
+      ask: 'https://hook.eu1.make.com/fngk8x57dk1pa61b3adovp96by5ci0d2'
     },
     spotsLeft: 9,
     saleEnd: '2026-08-10T23:59:59'
