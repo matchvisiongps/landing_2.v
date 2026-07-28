@@ -3091,3 +3091,164 @@ button {
   background: var(--color-navy-hover);
   box-shadow: 0 6px 18px rgba(22, 52, 95, 0.22);
 }
+
+/* ==========================================================================
+   MATCHVISION — Testimonials / ratings (home)
+   Same white-card language as the pricing cards; amber star ratings.
+   ========================================================================== */
+.reviews {
+  padding: 72px var(--gutter);
+}
+
+.reviews__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.reviews__title {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.reviews__aggregate {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reviews__score {
+  font-size: 16px;
+  color: var(--ink-70);
+}
+
+.reviews__score strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.reviews__count {
+  font-size: 13.5px;
+  color: var(--ink-55);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.review-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-card__score {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.review-card__quote {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-75);
+  flex: 1;
+}
+
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-navy-10);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.review-card__name {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.review-card__role {
+  font-size: 12.5px;
+  color: var(--ink-55);
+  margin-top: 2px;
+}
+
+/* ---------- Star rating (partial-fill overlay, no JS) ---------- */
+.stars {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.stars__row {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.stars .star {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.stars--lg .star {
+  width: 22px;
+  height: 22px;
+}
+
+.stars__row--bg {
+  color: var(--line-18);
+}
+
+.stars__row--fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-amber);
+  width: 100%;
+}
+
+.stars[data-rating="4.5"] .stars__row--fill { width: 90%; }
+.stars[data-rating="4.9"] .stars__row--fill { width: 98%; }
+.stars[data-rating="5"] .stars__row--fill { width: 100%; }
