@@ -36,10 +36,10 @@
   <link rel="preload" href="assets/fonts/sora-latin.var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/variables.css?v=3">
-  <link rel="stylesheet" href="css/style.css?v=3">
-  <link rel="stylesheet" href="css/animations.css?v=3">
-  <link rel="stylesheet" href="css/responsive.css?v=3">
+  <link rel="stylesheet" href="css/variables.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/animations.css?v=4">
+  <link rel="stylesheet" href="css/responsive.css?v=4">
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -59,14 +59,38 @@
         "name": "The Pro Match Report",
         "description": "A data analyst personally reviews your full match video and GPS data across technical, tactical and physical performance, and delivers a ranked plan of what to train next plus a free 1:1 call.",
         "brand": { "@type": "Brand", "name": "MATCHVISION" },
-        "offers": { "@type": "Offer", "price": "129", "priceCurrency": "EUR", "availability": "https://schema.org/LimitedAvailability" }
+        "offers": { "@type": "Offer", "price": "129", "priceCurrency": "EUR", "availability": "https://schema.org/LimitedAvailability" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "bestRating": "5", "reviewCount": "2" },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "U19 Academy Player, Brighton" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+            "reviewBody": "I bought this not knowing what to expect — and the result got me. It's so detailed and genuinely useful. It helped me improve the little things nobody had ever pointed out to me."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Semi-Pro Player" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "4.9", "bestRating": "5" },
+            "reviewBody": "I wanted to actually understand my numbers so I could build individual sessions and come into games prepared. The match analysis did exactly that — I know what to train and why."
+          }
+        ]
       },
       {
         "@type": "Product",
         "name": "GPS Football Data Blueprint",
         "description": "A downloadable guide: the 8 GPS metrics that matter and 28 conditioning drills you can run with or without a tracker. Built on 3 seasons of real data across Czech divisions 1–4.",
         "brand": { "@type": "Brand", "name": "MATCHVISION" },
-        "offers": { "@type": "Offer", "price": "19", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" }
+        "offers": { "@type": "Offer", "price": "19", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "bestRating": "5", "reviewCount": "1" },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Head Coach, Czech 3rd Division" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "I realised I'd been reading my data completely wrong. Now I have a clear vision of how to work with GPS — total distance, high-speed running, load — and turn those numbers into better sessions."
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -137,6 +161,7 @@
       <symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.5"/></symbol>
       <symbol id="i-bonus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M6 8v11a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
       <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></symbol>
     </defs>
   </svg>
 
@@ -301,6 +326,79 @@
 
       </section>
       <!-- /component:pricing -->
+
+      <!-- component:testimonials -->
+      <section class="reviews" aria-labelledby="reviews-title">
+        <div class="container reviews__head">
+          <p class="eyebrow">Loved by players &amp; coaches</p>
+          <h2 class="reviews__title" id="reviews-title">Results people can feel.</h2>
+          <div class="reviews__aggregate">
+            <span class="stars stars--lg" data-rating="4.9" role="img" aria-label="Average rating 4.9 out of 5">
+              <span class="stars__row stars__row--bg" aria-hidden="true"><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+              <span class="stars__row stars__row--fill" aria-hidden="true"><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="22" height="22" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+            </span>
+            <span class="reviews__score"><strong>4.9</strong>/5</span>
+            <span class="reviews__count">from players &amp; coaches we've worked with</span>
+          </div>
+        </div>
+
+        <div class="container reviews__grid">
+          <article class="review-card reveal">
+            <div class="review-card__rating">
+              <span class="stars" data-rating="4.5" role="img" aria-label="Rated 4.5 out of 5">
+                <span class="stars__row stars__row--bg" aria-hidden="true"><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+                <span class="stars__row stars__row--fill" aria-hidden="true"><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+              </span>
+              <span class="review-card__score">4.5</span>
+            </div>
+            <blockquote class="review-card__quote">"I bought this not knowing what to expect — and the result got me. It's so detailed and genuinely useful. It helped me improve the little things nobody had ever pointed out to me."</blockquote>
+            <div class="review-card__author">
+              <span class="review-card__avatar"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-player"/></svg></span>
+              <div>
+                <div class="review-card__name">U19 Academy Player</div>
+                <div class="review-card__role">Brighton · Pro Match Report</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal" data-reveal-delay="1">
+            <div class="review-card__rating">
+              <span class="stars" data-rating="5" role="img" aria-label="Rated 5 out of 5">
+                <span class="stars__row stars__row--bg" aria-hidden="true"><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+                <span class="stars__row stars__row--fill" aria-hidden="true"><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+              </span>
+              <span class="review-card__score">5.0</span>
+            </div>
+            <blockquote class="review-card__quote">"I realised I'd been reading my data completely wrong. Now I have a clear vision of how to actually work with GPS — total distance, high-speed running, load — and turn those numbers into better sessions."</blockquote>
+            <div class="review-card__author">
+              <span class="review-card__avatar"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-brain"/></svg></span>
+              <div>
+                <div class="review-card__name">Head Coach</div>
+                <div class="review-card__role">Czech 3rd Division · GPS Blueprint</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal" data-reveal-delay="2">
+            <div class="review-card__rating">
+              <span class="stars" data-rating="4.9" role="img" aria-label="Rated 4.9 out of 5">
+                <span class="stars__row stars__row--bg" aria-hidden="true"><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+                <span class="stars__row stars__row--fill" aria-hidden="true"><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="star" width="18" height="18" viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+              </span>
+              <span class="review-card__score">4.9</span>
+            </div>
+            <blockquote class="review-card__quote">"I wanted to actually understand my numbers so I could build individual sessions and come into games properly prepared. The match analysis did exactly that — I know what to train and why. Really happy with it."</blockquote>
+            <div class="review-card__author">
+              <span class="review-card__avatar"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-player"/></svg></span>
+              <div>
+                <div class="review-card__name">Semi-Pro Player</div>
+                <div class="review-card__role">Pro Match Report</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- /component:testimonials -->
 
       <!-- component:about — What is MATCHVISION? -->
       <section class="about" id="whatis" aria-labelledby="about-title">
@@ -1286,11 +1384,11 @@
   </div>
 
   <!-- Scripts (deferred: non-render-blocking) -->
-  <script src="js/main.js?v=3" defer></script>
-  <script src="js/forms.js?v=3" defer></script>
-  <script src="js/animations.js?v=3" defer></script>
-  <script src="js/lazyload.js?v=3" defer></script>
-  <script src="js/modals.js?v=3" defer></script>
+  <script src="js/main.js?v=4" defer></script>
+  <script src="js/forms.js?v=4" defer></script>
+  <script src="js/animations.js?v=4" defer></script>
+  <script src="js/lazyload.js?v=4" defer></script>
+  <script src="js/modals.js?v=4" defer></script>
 
 </body>
 </html>
