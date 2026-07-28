@@ -25,6 +25,13 @@
       review: 'https://buy.stripe.com/8x26oHfSogJofbd6x873G04',
       blueprint: 'https://buy.stripe.com/cNieVd49GeBggfhf3E73G03'
     },
+    // Make.com webhooks (used by js/forms.js)
+    //  order → the Pro Match Report submission (feeds your Excel sheet)
+    //  ask   → the "Ask a question" mini-form
+    webhooks: {
+      order: 'https://hook.eu1.make.com/0lr1kqqdlaep4naelq96nl9abkstuo1h',
+      ask: 'https://hook.eu1.make.com/sa4u6kb58s8f0x4azh76d3el6a6a5vlj'
+    },
     spotsLeft: 9,
     saleEnd: '2026-08-10T23:59:59'
   };

@@ -10,7 +10,12 @@
 (function () {
   'use strict';
 
-  var WEBHOOK_URL = 'https://hook.eu1.make.com/sa4u6kb58s8f0x4azh76d3el6a6a5vlj';
+  // Webhook endpoints (Make.com). Configurable via window.MV_CONFIG.webhooks.
+  //  - order : the Pro Match Report submission → your Excel sheet
+  //  - ask   : the "Ask a question" mini-form
+  var WEBHOOKS = (window.MV_CONFIG && window.MV_CONFIG.webhooks) || {};
+  var ORDER_WEBHOOK = WEBHOOKS.order || 'https://hook.eu1.make.com/0lr1kqqdlaep4naelq96nl9abkstuo1h';
+  var ASK_WEBHOOK = WEBHOOKS.ask || 'https://hook.eu1.make.com/sa4u6kb58s8f0x4azh76d3el6a6a5vlj';
   var STORAGE_KEY = 'mv-analysis-form-v1';
   var TOTAL_STEPS = 3;
 
@@ -447,12 +452,16 @@
     }
 
     try {
-      fetch(WEBHOOK_URL, {
+      // Send the full submission to the Make.com "order" webhook (Excel).
+      // keepalive lets the request complete even though we soon navigate to
+      // Stripe. We open the checkout modal regardless of the webhook result.
+      fetch(ORDER_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(buildPayload())
+        body: JSON.stringify(buildPayload()),
+        keepalive: true
       }).then(finish).catch(function (error) {
-        console.warn('webhook failed', error);
+        console.warn('order webhook failed', error);
         finish();
       });
     } catch (e) {
@@ -510,9 +519,9 @@
 
       askError.textContent = '';
 
-      // Fire-and-forget: reuse the same webhook with a distinct source tag.
+      // Fire-and-forget to the "ask" webhook with a distinct source tag.
       try {
-        fetch(WEBHOOK_URL, {
+        fetch(ASK_WEBHOOK, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
