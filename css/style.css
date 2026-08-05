@@ -662,6 +662,11 @@ button {
   display: block;
 }
 
+/* Brand logo panel (used where a team portrait is not yet available) */
+.about__media--logo {
+  background: #0d1b2e;
+}
+
 /* Striped placeholder for images not yet provided */
 .media-placeholder {
   border-radius: var(--radius-image);
