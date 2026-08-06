@@ -794,6 +794,7 @@ button {
 .report-placeholder {
   border-radius: 12px;
   height: 210px;
+  overflow: hidden;
   background: repeating-linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.05),
@@ -809,6 +810,19 @@ button {
   color: var(--cream-60);
   text-align: center;
   padding: 12px;
+}
+
+/* When a real report screenshot is present, let it fill the slot edge to edge. */
+.report-placeholder:has(> .report-shot__img) {
+  padding: 0;
+}
+
+.report-shot__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 .report-placeholder--wide {
