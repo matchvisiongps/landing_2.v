@@ -789,6 +789,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  align-items: start;
 }
 
 .report-placeholder {
@@ -812,16 +813,18 @@ button {
   padding: 12px;
 }
 
-/* When a real report screenshot is present, let it fill the slot edge to edge. */
+/* When a real report screenshot is present, show it in full at its native
+   proportions — no fixed height, no cropping. */
 .report-placeholder:has(> .report-shot__img) {
+  height: auto;
   padding: 0;
+  background: none;
 }
 
 .report-shot__img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   border-radius: inherit;
 }
 
