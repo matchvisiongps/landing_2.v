@@ -10,7 +10,7 @@
 (function () {
   'use strict';
 
-  var CONFIG = window.MV_CONFIG || { checkout: {}, saleEnd: '2026-08-10T23:59:59' };
+  var CONFIG = window.MV_CONFIG || { checkout: {}, saleEnd: '2026-08-15T23:59:59' };
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var openCount = 0;
@@ -199,20 +199,41 @@
     if (!promoOverlay) return;
     startCountdown();
 
-    var home = document.getElementById('page-home');
-    var expired = isNaN(target) || (target - Date.now() <= 0);
-    var seen;
-    try { seen = sessionStorage.getItem('mv-promo-seen'); } catch (e) { seen = null; }
+    var blueprint = document.getElementById('page-blueprint');
+    if (!blueprint) return;
 
-    if (home && !home.hidden && !seen && !expired) {
+    var scheduled = false;
+
+    // Surface the limited-offer promo when the visitor opens the Blueprint
+    // page (once per session, only while the sale is still live).
+    function triggerOnBlueprint() {
+      if (scheduled) return;
+      var expired = isNaN(target) || (target - Date.now() <= 0);
+      var seen;
+      try { seen = sessionStorage.getItem('mv-promo-seen'); } catch (e) { seen = null; }
+      if (blueprint.hidden || seen || expired) return;
+
+      scheduled = true;
       setTimeout(function () {
         // Don't stack on top of another open modal.
-        if (document.querySelector('.modal-overlay.is-open')) return;
-        // Only surface it if the visitor is still on the home page.
-        if (document.getElementById('page-home').hidden) return;
+        if (document.querySelector('.modal-overlay.is-open')) { scheduled = false; return; }
+        // Only surface it if the visitor is still on the Blueprint page.
+        if (blueprint.hidden) { scheduled = false; return; }
         openModal(promoOverlay);
         try { sessionStorage.setItem('mv-promo-seen', '1'); } catch (e) { /* noop */ }
       }, 1600);
+    }
+
+    // Deep-linked straight onto the Blueprint page.
+    triggerOnBlueprint();
+
+    // The SPA router toggles [hidden] on the page — react whenever the
+    // Blueprint page becomes visible via in-app navigation.
+    if (typeof MutationObserver === 'function') {
+      var observer = new MutationObserver(function () {
+        if (!blueprint.hidden) triggerOnBlueprint();
+      });
+      observer.observe(blueprint, { attributes: true, attributeFilter: ['hidden'] });
     }
   }
 

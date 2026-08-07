@@ -33,12 +33,13 @@
       ask: 'https://hook.eu1.make.com/fngk8x57dk1pa61b3adovp96by5ci0d2'
     },
     spotsLeft: 9,
-    saleEnd: '2026-08-10T23:59:59'
+    saleEnd: '2026-08-15T23:59:59'
   };
 
   var SPOTS_LEFT = window.MV_CONFIG.spotsLeft;
 
   /* ---------- Page router ---------- */
+  var pageViewTracked = false;
   var PAGE_IDS = {
     home: 'page-home',
     review: 'page-review',
@@ -88,6 +89,14 @@
 
     setActiveNav(name);
     document.title = PAGE_TITLES[name] || PAGE_TITLES.home;
+
+    // Meta Pixel — the base code fires PageView on the first (initial) load;
+    // this reports every subsequent in-app navigation so moves between the
+    // Home / Pro Report / Blueprint pages are tracked too.
+    if (pageViewTracked && typeof window.fbq === 'function') {
+      window.fbq('track', 'PageView');
+    }
+    pageViewTracked = true;
 
     if (!opts.replaceOnly && HASH_FOR_PAGE[name] !== undefined) {
       var hash = opts.anchor ? '#' + opts.anchor : HASH_FOR_PAGE[name];
