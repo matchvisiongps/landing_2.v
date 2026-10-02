@@ -1,4 +1,4 @@
-# MatchVision — matchvision.cz
+# MATCHVISION — matchvision.cz
 
 Statický web (HTML + CSS + JS, bez build kroku) pro GitHub Pages. Stačí nahrát soubory, nic se nekompiluje.
 
