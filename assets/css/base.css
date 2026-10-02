@@ -1,0 +1,45 @@
+/* ---------- Základ ---------- */
+:root{
+  --navy:#0A192F;
+  --navy-deep:#07121F;
+  --lime:#C8F04A;
+  --lime-rgb:200,240,74;
+  --paper:#F2F4F7;
+  --white:#FFFFFF;
+  --ink:#0A192F;
+  --body:#3A4760;
+  --muted:#52607A;
+  --line:#E3E7EE;
+  --on-dark:#A9B7CC;
+  --on-dark-2:#8A9BB5;
+  --font-display:"Sora",system-ui,sans-serif;
+  --font-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --gutter:120px;
+  --pad:max(var(--gutter), calc(50% - 600px));
+  --header-h:96px;
+  --sec:112px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);font-weight:500;color:var(--ink);background:var(--navy);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-x:clip}
+img,svg,canvas{display:block}
+img{max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,ol,ul{margin:0}
+ol,ul{padding:0;list-style:none}
+button,input,textarea{font:inherit;color:inherit}
+section[id]{scroll-margin-top:var(--header-h)}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:6px}
+.skip-link{position:absolute;left:16px;top:-60px;z-index:100;padding:12px 18px;border-radius:12px;background:var(--lime);color:var(--navy);font-weight:700;transition:top .2s}
+.skip-link:focus{top:12px}
+
+.wrap{padding-inline:var(--pad)}
+.section{padding-block:var(--sec)}
+
+/* ---------- Typografie ---------- */
+.kicker{display:flex;align-items:center;gap:12px;font-family:var(--font-mono);font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.kicker-line{width:28px;height:1px;background:currentColor;flex-shrink:0}
+.kicker-accent{color:var(--lime)}
+.h2{margin-top:20px;font-family:var(--font-display);font-weight:600;font-size:46px;line-height:1.14;letter-spacing:-.035em;text-wrap:balance}

@@ -1,0 +1,16 @@
+/* ---------- Tlačítka ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border:0;border-radius:999px;font-size:15px;font-weight:700;line-height:1;white-space:nowrap;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background-color .3s,border-color .3s,filter .3s,color .3s}
+.btn-lg{height:56px;padding:0 28px;font-size:16px}
+.btn .arrow{transition:transform .4s var(--ease)}
+.btn-accent{background:var(--lime);color:var(--navy)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy .arrow{color:var(--lime)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.28);color:var(--white);font-weight:600;background:transparent}
+.btn:active{transform:translateY(0) scale(.98)}
+@media (hover:hover){
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px -14px rgba(0,0,0,.55)}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .btn-accent:hover{filter:brightness(1.07) saturate(1.05)}
+  .btn-ghost:hover{background-color:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6)}
+  .btn-navy:hover{box-shadow:0 16px 32px -14px rgba(10,25,47,.6)}
+}

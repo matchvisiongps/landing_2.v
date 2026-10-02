@@ -1,0 +1,120 @@
+/* =========================================================
+   Menší počítače (pod 1280 px)
+   ========================================================= */
+@media (max-width:1279px){
+  :root{--gutter:48px;--sec:96px}
+  .nav{gap:28px}
+  .hero-title{font-size:72px}
+  .about-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+  .contact-grid{grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:56px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step{min-height:0}
+}
+
+/* =========================================================
+   Tablet (pod 1024 px) — menu se schová do tlačítka
+   ========================================================= */
+@media (max-width:1023px){
+  :root{--sec:88px}
+  .burger{display:block}
+  .nav{position:fixed;left:0;right:0;top:var(--header-h);max-height:calc(100dvh - var(--header-h));overflow-y:auto;padding:12px var(--pad) 28px;flex-direction:column;align-items:stretch;gap:0;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s,transform .4s var(--ease),visibility 0s .4s}
+  .menu-open .nav{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .4s var(--ease),visibility 0s}
+  .nav-link{padding:18px 0;font-size:18px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-link::after{display:none}
+  .nav-cta{margin-top:24px;height:54px;font-size:16px}
+
+  .hero-inner{min-height:0;grid-template-columns:1fr;row-gap:24px;padding-top:56px;padding-bottom:56px}
+  .hero-lead{max-width:640px}
+  .visual{max-width:640px;width:100%;justify-self:center}
+
+  .section-head{flex-direction:column;align-items:flex-start;gap:28px}
+  .statement-text{font-size:40px}
+  .benefits{grid-template-columns:1fr;gap:16px}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .contact-links{flex-direction:row;flex-wrap:wrap;gap:16px 32px;margin-top:36px}
+  .site-footer{flex-direction:column;align-items:flex-start}
+}
+
+/* =========================================================
+   Telefon (pod 768 px)
+   ========================================================= */
+@media (max-width:767px){
+  :root{--gutter:20px;--header-h:68px;--sec:72px}
+  .brand-logo{height:28px}
+  .burger{width:44px;height:44px}
+  .burger span{left:11px;right:11px}
+  .burger span:nth-child(1){top:13px}
+  .burger span:nth-child(2){top:20px}
+  .burger span:nth-child(3){top:27px}
+
+  .kicker{font-size:11.5px;letter-spacing:.1em}
+  .h2{font-size:clamp(30px,8.2vw,38px)}
+
+  .hero-inner{padding-top:40px;padding-bottom:48px;row-gap:8px}
+  .hero-title{margin-top:20px;font-size:clamp(48px,14vw,64px)}
+  .hero-lead{margin-top:22px;font-size:17px}
+  .hero-actions{margin-top:28px;flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%}
+  .hero-trust{margin-top:32px;padding-top:20px;flex-direction:column;gap:12px}
+
+  /* na telefonu: čip uprostřed a datové karty pod ním ve dvou sloupcích */
+  .visual{height:auto;--s:.7}
+  .stage-frame{position:relative;height:calc(600px * var(--s))}
+  .flow{display:none}
+  .huds{position:static;transform:none;width:auto;height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:4px;pointer-events:auto}
+  .hud{position:relative;left:auto;top:auto;width:auto;min-width:0;padding:14px}
+  .hud-4{padding:14px;gap:12px}
+  .hud-label{font-size:10px;letter-spacing:.12em}
+  .hud-value strong{font-size:22px}
+  .hud-value span{font-size:12px}
+  .hud-chart{width:100%;height:auto}
+  .gauge{width:52px;height:52px}
+
+  .statement{padding-block:72px 64px}
+  .statement-text{font-size:clamp(26px,7vw,34px);line-height:1.25}
+  .benefits{margin-top:36px}
+  .benefit{padding:20px}
+
+  .cards{margin-top:36px;grid-template-columns:1fr;gap:16px}
+  .cards .card{min-height:0}
+  .card{padding:26px}
+  .card-title{margin-top:20px}
+
+  .steps{margin-top:36px;grid-template-columns:1fr;gap:12px}
+  .step{padding:24px}
+  .step-title{margin-top:20px}
+
+  .about-text{font-size:16px}
+  .person{padding:20px;grid-template-columns:88px minmax(0,1fr);grid-template-areas:"photo meta" "text text";column-gap:18px}
+  .person-photo{width:88px;height:88px;padding:4px}
+  .person-meta{align-self:center}
+  .person-name{font-size:22px}
+  .person-role{font-size:11px;line-height:1.5}
+  .person-text{margin-top:16px;font-size:15.5px}
+  .stats{margin-top:48px;grid-template-columns:1fr;gap:28px}
+  .stat-num{font-size:44px}
+
+  .contact-title{font-size:clamp(32px,9vw,40px)}
+  .contact-lead{font-size:17px}
+  .contact-links{flex-direction:column}
+  .form{padding:24px 20px;border-radius:22px}
+  .form-row{grid-template-columns:1fr}
+  .form-submit{width:100%}
+
+  .site-footer{padding:36px var(--pad) 40px}
+  .footer-brand{flex-direction:column;align-items:flex-start;gap:16px}
+  .footer-logo img{height:30px}
+}
+
+@media (max-width:359px){
+  .huds{grid-template-columns:1fr}
+}
+
+/* Kdo má v systému vypnuté animace, nic se nehýbe */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .js [data-reveal]{opacity:1;translate:none}
+}

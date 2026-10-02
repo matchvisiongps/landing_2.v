@@ -1,0 +1,20 @@
+/* ---------- O nás ---------- */
+.about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:520px minmax(0,1fr);gap:72px;align-items:center}
+.about-text{margin-top:24px;font-size:17px;line-height:1.7;color:var(--body);max-width:62ch}
+.about-text+.about-text{margin-top:16px}
+.team{display:flex;flex-direction:column;gap:20px}
+.person{padding:28px;border-radius:24px;display:grid;grid-template-columns:132px minmax(0,1fr);grid-template-areas:"photo meta" "photo text";column-gap:28px;align-items:center;align-content:center}
+.person-photo{grid-area:photo;width:132px;height:132px;padding:5px;border-radius:50%;border:2px solid var(--lime);transition:transform .55s var(--ease)}
+.person-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--white)}
+.person-meta{grid-area:meta;align-self:end}
+.person-name{font-family:var(--font-display);font-weight:600;font-size:26px;letter-spacing:-.03em}
+.person-role{margin-top:6px;font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.person-text{grid-area:text;align-self:start;margin-top:14px;font-size:16px;line-height:1.65;color:var(--body)}
+@media (hover:hover){.person:hover .person-photo{transform:scale(1.05) rotate(-4deg)}}
+.stats{margin-top:72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.stat{position:relative;border-top:2px solid #D5DBE5;padding-top:26px}
+.stat::before{content:"";position:absolute;left:0;top:-2px;height:2px;width:100%;background:var(--navy);transform:scaleX(.16);transform-origin:left;transition:transform .8s var(--ease)}
+.stat-num{font-family:var(--font-display);font-weight:600;font-size:56px;line-height:1;letter-spacing:-.04em;transition:transform .5s var(--ease)}
+.stat-text{margin-top:14px;font-size:16px;line-height:1.5;color:var(--muted)}
+@media (hover:hover){.stat:hover::before{transform:scaleX(1)}.stat:hover .stat-num{transform:translateX(6px)}}

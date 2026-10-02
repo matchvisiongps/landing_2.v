@@ -1,0 +1,39 @@
+/* ---------- Kontakt ---------- */
+.contact{position:relative;overflow:hidden;background:var(--navy);color:var(--white)}
+.contact-glow{position:absolute;left:-200px;bottom:-260px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(59,123,255,.16) 0%,rgba(59,123,255,0) 65%);pointer-events:none}
+.contact-grid{position:relative;display:grid;grid-template-columns:440px minmax(0,1fr);gap:80px;align-items:start}
+.contact-title{font-size:50px;line-height:1.1}
+.contact-lead{margin-top:24px;font-size:18px;line-height:1.7;color:var(--on-dark)}
+.contact-links{margin-top:48px;display:flex;flex-direction:column;gap:16px}
+.clink{display:flex;align-items:center;gap:16px;align-self:flex-start}
+.clink-icon{width:48px;height:48px;flex-shrink:0;border-radius:14px;background:rgba(255,255,255,.07);color:var(--lime);display:flex;align-items:center;justify-content:center;transition:background-color .35s,transform .45s var(--ease)}
+.clink-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.clink-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-2)}
+.clink-text{font-size:17px;font-weight:600;color:#D5DEEA;overflow-wrap:anywhere;transition:color .3s}
+@media (hover:hover){.clink:hover .clink-icon{background-color:rgba(255,255,255,.16);transform:translateY(-2px)}.clink:hover .clink-text{color:var(--white)}}
+
+.form{position:relative;padding:40px;border-radius:26px;background:var(--white);color:var(--ink);display:flex;flex-direction:column;gap:20px;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px}
+.field{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:700}
+.optional{font-weight:500;color:var(--muted)}
+.input{width:100%;height:52px;padding:0 16px;border:1.5px solid #DCE1E8;border-radius:14px;background:var(--white);font-size:16px;font-weight:500;color:var(--ink);transition:border-color .25s,box-shadow .3s;-webkit-appearance:none;appearance:none}
+textarea.input{height:auto;min-height:152px;padding:14px 16px;line-height:1.55;resize:vertical}
+.input::placeholder{color:#8A94A6;opacity:1}
+.input:hover{border-color:#AEB7C6}
+.input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(10,25,47,.1)}
+.input.is-invalid{border-color:#C2410C;box-shadow:0 0 0 4px rgba(194,65,12,.1)}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.form-note{font-size:13px;line-height:1.55;color:var(--muted)}
+.form-note a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.submit-idle,.submit-done{align-items:center;gap:10px}
+.submit-idle{display:inline-flex}
+.submit-busy,.submit-done{display:none}
+.is-busy .submit-idle,.is-sent .submit-idle{display:none}
+.is-busy .submit-busy{display:inline}
+.is-sent .submit-done{display:inline-flex}
+.is-busy .form-submit{opacity:.75;pointer-events:none}
+.is-sent .form-submit{background:var(--lime);color:var(--navy)}
+.form-status{font-size:14px;line-height:1.5;color:var(--muted)}
+.form-status.is-error{color:#B42318}
+.form-status a{text-decoration:underline;text-underline-offset:3px}
