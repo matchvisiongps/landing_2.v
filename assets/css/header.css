@@ -1,13 +1,13 @@
 /* ---------- Hlavička ---------- */
 .site-header{position:sticky;top:0;z-index:50;height:var(--header-h);padding-inline:var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(10,25,47,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);color:var(--white)}
-.brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
-.brand-logo{height:34px;width:auto}
-.nav{display:flex;align-items:center;gap:40px}
-.nav-link{position:relative;font-size:15px;font-weight:600;color:var(--on-dark);transition:color .3s}
+.brand{display:flex;align-items:center;flex-shrink:0}
+.brand-logo{height:24px;width:auto;max-width:none}
+.nav{display:flex;align-items:center;gap:32px}
+.nav-link{position:relative;font-size:14px;font-weight:600;color:var(--on-dark);transition:color .3s}
 .nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
 .nav-link:hover,.nav-link.is-current{color:var(--white)}
 .nav-link:hover::after,.nav-link.is-current::after{transform:scaleX(1)}
-.nav-cta{height:46px;padding:0 22px}
+.nav-cta{height:40px;padding:0 20px;font-size:14px}
 .burger{display:none;position:relative;width:46px;height:46px;border:1.5px solid rgba(255,255,255,.22);border-radius:14px;background:transparent;cursor:pointer;flex-shrink:0}
 .burger span{position:absolute;left:12px;right:12px;height:2px;border-radius:2px;background:var(--white);transition:transform .35s var(--ease),opacity .2s}
 .burger span:nth-child(1){top:14px}

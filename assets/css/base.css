@@ -18,7 +18,7 @@
   --ease:cubic-bezier(.2,.8,.2,1);
   --gutter:120px;
   --pad:max(var(--gutter), calc(50% - 600px));
-  --header-h:96px;
+  --header-h:72px;
   --sec:112px;
 }
 *,*::before,*::after{box-sizing:border-box}

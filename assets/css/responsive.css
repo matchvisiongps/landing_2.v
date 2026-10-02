@@ -3,7 +3,7 @@
    ========================================================= */
 @media (max-width:1279px){
   :root{--gutter:48px;--sec:96px}
-  .nav{gap:28px}
+  .nav{gap:24px}
   .hero-title{font-size:72px}
   .about-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
   .contact-grid{grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:56px}
@@ -41,8 +41,8 @@
    Telefon (pod 768 px)
    ========================================================= */
 @media (max-width:767px){
-  :root{--gutter:20px;--header-h:68px;--sec:72px}
-  .brand-logo{height:28px}
+  :root{--gutter:20px;--header-h:60px;--sec:72px}
+  .brand-logo{height:20px}
   .burger{width:44px;height:44px}
   .burger span{left:11px;right:11px}
   .burger span:nth-child(1){top:13px}
@@ -105,7 +105,7 @@
 
   .site-footer{padding:36px var(--pad) 40px}
   .footer-brand{flex-direction:column;align-items:flex-start;gap:16px}
-  .footer-brand img{height:30px}
+  .site-footer img{height:22px}
 }
 
 @media (max-width:359px){

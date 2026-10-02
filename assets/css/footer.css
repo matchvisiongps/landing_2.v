@@ -1,7 +1,7 @@
 /* ---------- Patička ---------- */
 .site-footer{padding:36px var(--pad);min-height:140px;background:var(--navy-deep);color:var(--on-dark-2);display:flex;align-items:center;justify-content:space-between;gap:24px 40px;font-size:14px}
 .footer-brand{display:flex;align-items:center;gap:32px}
-.footer-brand img{height:34px;width:auto}
+.site-footer img{height:24px;width:auto;max-width:none}
 .footer-brand span{max-width:300px;line-height:1.55}
 .footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px}
 .footer-links a{transition:color .3s}
