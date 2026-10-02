@@ -14,7 +14,7 @@
   --on-dark-2:#8A9BB5;
   --font-display:"Sora",system-ui,sans-serif;
   --font-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --font-label:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
   --ease:cubic-bezier(.2,.8,.2,1);
   --gutter:120px;
   --pad:max(var(--gutter), calc(50% - 600px));
@@ -39,7 +39,7 @@ section[id]{scroll-margin-top:var(--header-h)}
 .section{padding-block:var(--sec)}
 
 /* ---------- Typografie ---------- */
-.kicker{display:flex;align-items:center;gap:12px;font-family:var(--font-mono);font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.kicker{display:flex;align-items:center;gap:12px;font-family:var(--font-label);font-weight:600;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .kicker-line{width:28px;height:1px;background:currentColor;flex-shrink:0}
 .kicker-accent{color:var(--lime)}
 .h2{margin-top:20px;font-family:var(--font-display);font-weight:600;font-size:46px;line-height:1.14;letter-spacing:-.035em;text-wrap:balance}

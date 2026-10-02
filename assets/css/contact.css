@@ -8,7 +8,7 @@
 .clink{display:flex;align-items:center;gap:16px;align-self:flex-start}
 .clink-icon{width:48px;height:48px;flex-shrink:0;border-radius:14px;background:rgba(255,255,255,.07);color:var(--lime);display:flex;align-items:center;justify-content:center;transition:background-color .35s,transform .45s var(--ease)}
 .clink-body{display:flex;flex-direction:column;gap:2px;min-width:0}
-.clink-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-2)}
+.clink-label{font-family:var(--font-label);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-2)}
 .clink-text{font-size:17px;font-weight:600;color:#D5DEEA;overflow-wrap:anywhere;transition:color .3s}
 @media (hover:hover){.clink:hover .clink-icon{background-color:rgba(255,255,255,.16);transform:translateY(-2px)}.clink:hover .clink-text{color:var(--white)}}
 

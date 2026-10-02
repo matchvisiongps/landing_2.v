@@ -18,7 +18,7 @@
 .prose a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
 .todo{background:#FFF3B0;border-radius:4px;padding:0 4px}
 .notfound{min-height:calc(100svh - var(--header-h) - 140px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:24px;padding:80px var(--pad);background:var(--navy);color:var(--white)}
-.notfound-code{font-family:var(--font-mono);font-size:14px;letter-spacing:.16em;color:var(--lime)}
+.notfound-code{font-family:var(--font-label);font-weight:600;font-size:18px;letter-spacing:.14em;color:var(--lime)}
 .notfound h1{font-family:var(--font-display);font-weight:600;font-size:clamp(36px,7vw,64px);line-height:1.05;letter-spacing:-.04em}
 .notfound p{max-width:520px;font-size:18px;line-height:1.65;color:var(--on-dark)}
 @media (max-width:767px){.page-hero{padding:48px var(--pad) 44px}.prose{padding:44px var(--pad) 72px}.subpage .site-header .btn{height:40px;padding:0 16px}}
