@@ -1,4 +1,4 @@
-/* MatchVision — menu na mobilu + zvýraznění aktuální sekce */
+/* MATCHVISION — menu na mobilu + zvýraznění aktuální sekce */
 (function () {
   'use strict';
 

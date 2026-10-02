@@ -1,4 +1,4 @@
-/* MatchVision — vizuál s čipem v úvodu: přizpůsobení velikosti + líné načtení 3D modelu
+/* MATCHVISION — vizuál s čipem v úvodu: přizpůsobení velikosti + líné načtení 3D modelu
    Těžký soubor vendor/mvchip.js (three.js, ~500 kB) se stahuje až po načtení stránky,
    takže neblokuje první zobrazení. Do té doby je vidět obrázek čipu. */
 (function () {

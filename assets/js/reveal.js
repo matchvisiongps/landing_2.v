@@ -1,4 +1,4 @@
-/* MatchVision — postupné zobrazení obsahu při posouvání (prvky s data-reveal) */
+/* MATCHVISION — postupné zobrazení obsahu při posouvání (prvky s data-reveal) */
 (function () {
   'use strict';
 

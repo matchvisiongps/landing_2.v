@@ -1,4 +1,4 @@
-/* MatchVision — společné pomůcky (načítá se jako první) */
+/* MATCHVISION — společné pomůcky (načítá se jako první) */
 window.MV = {
   root: document.documentElement,
   reduceMotion: !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)

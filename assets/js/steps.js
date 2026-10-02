@@ -1,4 +1,4 @@
-/* MatchVision — „Jak to funguje": postupné zvýraznění kroků */
+/* MATCHVISION — „Jak to funguje": postupné zvýraznění kroků */
 (function () {
   'use strict';
 

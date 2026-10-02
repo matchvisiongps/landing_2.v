@@ -1,4 +1,4 @@
-/* MatchVision — kontaktní formulář (Web3Forms, bez klíče náhradně otevře e-mail) */
+/* MATCHVISION — kontaktní formulář (Web3Forms, bez klíče náhradně otevře e-mail) */
 (function () {
   'use strict';
 
