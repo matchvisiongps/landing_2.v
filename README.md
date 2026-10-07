@@ -47,6 +47,6 @@ npx http-server . -p 8080
 ```
 (Otevření `index.html` dvojklikem funguje, ale 3D čip se z disku nenačte.)
 
-## Formulář (Web3Forms)
+## Formulář (Make.com webhook)
 
-Vložte přístupový klíč do `<input type="hidden" name="access_key" value="">` v `index.html`. Bez klíče se otevře předvyplněný e-mail na team@matchvision.cz.
+Formulář posílá data (jmeno, klub, email, telefon, zprava, predmet, odeslano, stranka) na webhook v `assets/js/contact-form.js` (konstanta `WEBHOOK`). Make scénář z nich odešle Gmail.

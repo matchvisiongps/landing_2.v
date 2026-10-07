@@ -399,16 +399,8 @@
       </div>
     </div>
 
-    <!--
-      FORMULÁŘ — jak ho zapnout:
-      1) Na https://web3forms.com zadejte e-mail, kam mají poptávky chodit. Pošlou vám přístupový klíč (Access Key).
-      2) Klíč vložte níže do value="" u pole access_key (mezi uvozovky).
-      Dokud klíč chybí, tlačítko „Odeslat poptávku“ otevře návštěvníkovi předvyplněný e-mail na team@matchvision.cz.
-    -->
-    <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" data-reveal novalidate>
-      <input type="hidden" name="access_key" value="">
-      <input type="hidden" name="subject" value="Nová poptávka z matchvision.cz">
-      <input type="hidden" name="from_name" value="Web MATCHVISION">
+    <!-- FORMULÁŘ: odeslání řeší assets/js/contact-form.js (webhook Make.com → Gmail) -->
+    <form class="form" id="contact-form" method="POST" data-reveal novalidate>
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <div class="form-row">
