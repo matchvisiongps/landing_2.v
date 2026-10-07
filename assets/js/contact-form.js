@@ -1,4 +1,4 @@
-/* MATCHVISION — kontaktní formulář (Web3Forms, bez klíče náhradně otevře e-mail) */
+/* MATCHVISION — kontaktní formulář (odesílá data na Make.com webhook → Gmail) */
 (function () {
   'use strict';
 
@@ -6,6 +6,7 @@
   if (form) {
     var status = document.getElementById('form-status');
     var EMAIL = 'team@matchvision.cz';
+    var WEBHOOK = 'https://hook.eu1.make.com/fngk8x57dk1pa61b3adovp96by5ci0d2';
     var setStatus = function (html, isError) {
       status.innerHTML = html || '';
       status.classList.toggle('is-error', !!isError);
@@ -39,32 +40,23 @@
       // robot vyplnil skryté pole → tváříme se, že je odesláno
       if (field('botcheck') && field('botcheck').checked) { done(); return; }
 
-      var key = val('access_key');
-      if (!key) {
-        // Klíč z Web3Forms zatím není vložený → otevřeme předvyplněný e-mail
-        var body = 'Jméno: ' + val('name') + '\nKlub / tým: ' + val('klub') + '\nE-mail: ' + val('email') +
-          (val('telefon') ? '\nTelefon: ' + val('telefon') : '') + '\n\n' + val('message');
-        window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Poptávka z webu – ' + val('klub')) +
-          '&body=' + encodeURIComponent(body);
-        setStatus('Otevřeli jsme vám e-mail s vyplněnou poptávkou, stačí ho odeslat. Pokud se nic neotevřelo, napište nám na <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.');
-        return;
-      }
-
       form.classList.add('is-busy');
       setStatus('');
-      var data = {};
-      new FormData(form).forEach(function (v, k) { data[k] = v; });
-      data.subject = 'Nová poptávka z matchvision.cz – ' + val('klub');
+      var data = new URLSearchParams();
+      data.append('jmeno', val('name'));
+      data.append('klub', val('klub'));
+      data.append('email', val('email'));
+      data.append('telefon', val('telefon'));
+      data.append('zprava', val('message'));
+      data.append('predmet', 'Nová poptávka z matchvision.cz – ' + val('klub'));
+      data.append('odeslano', new Date().toISOString());
+      data.append('stranka', window.location.href);
 
-      fetch(form.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(data)
-      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (res) {
+      // form-urlencoded = „jednoduchý“ požadavek bez CORS preflightu
+      fetch(WEBHOOK, { method: 'POST', body: data })
+        .then(function (r) {
           form.classList.remove('is-busy');
-          if (res.ok && res.j && res.j.success !== false) done();
-          else fail();
+          if (r.ok) done(); else fail();
         })
         .catch(function () { form.classList.remove('is-busy'); fail(); });
     });
