@@ -7,8 +7,9 @@
     var status = document.getElementById('form-status');
     var EMAIL = 'team@matchvision.cz';
     var WEBHOOK = 'https://hook.eu1.make.com/fngk8x57dk1pa61b3adovp96by5ci0d2';
-    var setStatus = function (html, isError) {
+    var setStatus = function (html, isError, key) {
       status.innerHTML = html || '';
+      if (key) status.setAttribute('data-ui', key); else status.removeAttribute('data-ui');
       status.classList.toggle('is-error', !!isError);
     };
     var field = function (n) { return form.elements[n]; };
@@ -32,7 +33,8 @@
       });
       if (invalid.length) {
         var badEmail = invalid.indexOf(field('email')) !== -1 && val('email') !== '';
-        setStatus(badEmail ? 'Zkontrolujte prosím e-mailovou adresu.' : 'Vyplňte prosím jméno, klub, e-mail a zprávu.', true);
+        var msg = badEmail ? 'Zkontrolujte prosím e-mailovou adresu.' : 'Vyplňte prosím jméno, klub, e-mail a zprávu.';
+        setStatus(MV.t(msg), true, msg);
         invalid[0].focus();
         return;
       }
@@ -51,6 +53,7 @@
       data.append('predmet', 'Nová poptávka z matchvision.cz – ' + val('klub'));
       data.append('odeslano', new Date().toISOString());
       data.append('stranka', window.location.href);
+      data.append('jazyk', MV.lang ? MV.lang() : 'cs');
 
       // form-urlencoded = „jednoduchý“ požadavek bez CORS preflightu
       fetch(WEBHOOK, { method: 'POST', body: data })
@@ -64,11 +67,11 @@
     var done = function () {
       form.reset();
       form.classList.add('is-sent');
-      setStatus('Poptávka dorazila. Ozveme se vám co nejdříve.');
+      setStatus(MV.t('Poptávka dorazila. Ozveme se vám co nejdříve.'), false, 'Poptávka dorazila. Ozveme se vám co nejdříve.');
       setTimeout(function () { form.classList.remove('is-sent'); }, 6000);
     };
     var fail = function () {
-      setStatus('Odeslání se nepovedlo. Zkuste to prosím znovu, nebo nám napište na <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.', true);
+      setStatus(MV.t('Odeslání se nepovedlo. Zkuste to prosím znovu, nebo nám napište na') + ' <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.', true);
     };
   }
 })();

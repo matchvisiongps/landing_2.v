@@ -10,7 +10,7 @@
     root.classList.toggle('menu-open', open);
     if (burger) {
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      burger.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
+      burger.setAttribute('aria-label', MV.t(open ? 'Zavřít menu' : 'Otevřít menu'));
     }
   }
 
