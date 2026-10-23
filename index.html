@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="assets/css/contact.css">
 <link rel="stylesheet" href="assets/css/footer.css">
 <link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/lang.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 
 <script type="application/ld+json">
@@ -65,6 +66,8 @@
 
 <script>document.documentElement.classList.add('js');</script>
 <script src="assets/js/common.js" defer></script>
+<script src="assets/js/i18n-dict.js" defer></script>
+<script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/menu.js" defer></script>
 <script src="assets/js/hero-chip.js" defer></script>
 <script src="assets/js/steps.js" defer></script>
@@ -86,6 +89,12 @@
     <a class="nav-link" href="#contact">Kontakt</a>
     <a class="btn btn-accent nav-cta" href="#contact">Nezávazná poptávka</a>
   </nav>
+
+  <div class="lang" role="group" aria-label="Jazyk">
+    <button class="lang-btn is-active" type="button" data-lang="cs" lang="cs" aria-pressed="true">CS</button>
+    <button class="lang-btn" type="button" data-lang="pl" lang="pl" aria-pressed="false">PL</button>
+    <button class="lang-btn" type="button" data-lang="de" lang="de" aria-pressed="false">DE</button>
+  </div>
 
   <button class="burger" type="button" aria-controls="nav" aria-expanded="false" aria-label="Otevřít menu">
     <span></span><span></span><span></span>
@@ -212,7 +221,7 @@
 <!-- HLAVNÍ MYŠLENKA -->
 <section class="statement">
   <div class="wrap">
-    <p class="statement-text" data-reveal>Nemusíte kupovat <mark>drahé vybavení</mark> ani mít <mark>vlastního analytika</mark>. O&nbsp;technologii i&nbsp;o&nbsp;data se postaráme my.</p>
+    <p class="statement-text" data-reveal data-i18n>Nemusíte kupovat <mark>drahé vybavení</mark> ani mít <mark>vlastního analytika</mark>. O&nbsp;technologii i&nbsp;o&nbsp;data se postaráme my.</p>
     <div class="benefits">
       <div class="benefit lift" data-reveal style="--i:0">
         <span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.5-6-10a6 6 0 0 1 12 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg></span>

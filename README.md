@@ -14,7 +14,7 @@ CNAME                           doména matchvision.cz — nemazat
 assets/
   css/   fonts · base (barvy, reset) · buttons · header · hero · statement-services
          process · about · contact · footer · animations · responsive · subpages
-  js/    common · menu · hero-chip · steps · reveal · contact-form
+  js/    common · i18n · i18n-dict · menu · hero-chip · steps · reveal · contact-form
          vendor/mvchip.js       3D čip (three.js, minifikovaný — needitovat)
   img/   logo-matchvision.png (logo v hlavičce, patičce i na 404) + fotky, ikony
   fonts/, textures/
@@ -31,8 +31,18 @@ assets/
 | Fotky týmu | `assets/img/tomas.jpg`, `daniel.jpg` (420×420 px, stejný název) |
 | Formulář | `assets/js/contact-form.js` + `access_key` v `index.html` |
 | Menu na mobilu | `assets/js/menu.js` |
+| Překlady (PL, DE) | `assets/js/i18n-dict.js` |
 
 CSS se načítá v pořadí uvedeném v `<head>` v `index.html` — nové soubory přidávejte před `responsive.css`.
+
+## Jazyky (CS / PL / DE)
+
+Čeština je přímo v HTML (SEO, funguje i bez JS). Přepínač `CS | PL | DE` v hlavičce přeloží celou stránku včetně titulků, meta popisů, placeholderů a hlášek formuláře; volba se pamatuje v prohlížeči (`?lang=pl` ji nastaví odkazem).
+
+- Překlady jsou v `assets/js/i18n-dict.js` jako řádky `[čeština, polština, němčina]`. **Český text je klíč** — když změníte text v HTML, upravte ho i tam, jinak se v PL/DE zobrazí česky.
+- Chybějící překlady zjistíte v konzoli: `MV_I18N_DEBUG = true; MV.setLang('pl')`.
+- Nový jazyk: přidejte sloupec do `i18n-dict.js`, kód do `LANGS` v `i18n.js` a tlačítko do přepínače.
+- Formulář posílá do webhooku navíc pole `jazyk` (cs/pl/de).
 
 ## Výkon
 
